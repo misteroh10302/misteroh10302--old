@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test The Carousel</title>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<style>
+	.previous,.next {
+		cursor: pointer;
+		font-family: Helvetica;
+		letter-spacing: .75px;
+		text-transform: capitalize;
+	}
+	.previous {
+		position: absolute;
+		left: 30px;
+		top: 5vh;
+	}
+
+	.next {
+		position: absolute;
+		right: 30px;
+		top: 5vh;
+	}	
+	.gallery {
+		position: relative;
+	}
+
+	.slides {
+		position: absolute;
+		text-align: center;
+		margin: 8vh auto;
+		left:0;
+		right:0;
+	}
+
+	.slides img {
+		max-height: 80vh;
+		margin: 0 auto;
+	}
+
+	</style>
+
+	<div class="previous">
+		Previous
+	</div>
+
+	<div class="next">
+		next
+	</div>
+
+	<div class="gallery">
+		<p class="slides">
+			<img src="https://format-com-cld-res.cloudinary.com/image/private/s--3sK6TnMZ--/c_limit,g_center,h_550,w_65535/a_auto,fl_keep_iptc.progressive,q_95/v1/85714c79eab43b3ccca778d00d63cb6a/15910027_3.jpg" alt="">
+		</p>
+		<p class="slides">
+			<img src="https://format-com-cld-res.cloudinary.com/image/private/s--09Ml0dBC--/c_limit,g_center,h_550,w_65535/a_auto,fl_keep_iptc.progressive,q_95/v1/84fd5fbeddbcadcc1d493de2abd913a3/20680009_2.jpg"  alt="">
+		</p>
+		<p class="slides">
+			<img src="https://format-com-cld-res.cloudinary.com/image/private/s--H-BME5fS--/c_limit,g_center,h_550,w_65535/a_auto,fl_keep_iptc.progressive,q_95/v1/16b577bd41fd6c78d85a8af6ed1ea498/66930006_2.jpg" alt="">
+		</p>
+		<p class="slides">
+			<img src="https://format-com-cld-res.cloudinary.com/image/private/s--bA3d4zDs--/c_limit,g_center,h_550,w_65535/a_auto,fl_keep_iptc.progressive,q_95/23560-11533597-45040014_jpg.jpg" alt="">
+		</p>
+	</div>
+
+	<script>
+
+	(function(){
+		var $slides = $('.gallery p');
+		$slides.hide();
+		x = 0;	
+
+		function show(x,direction,currentSlideDirection) {
+			$('.current').css('transform','translate('+currentSlideDirection+',0px');
+
+			setTimeout(function delay(){
+				$slides.hide().css({'transform':'translate('+direction+',0px)','transition':'1s'}).delay(20000);
+				$slides.removeClass('current');
+				$currentSlide = $slides.eq(x);
+				$currentSlide.addClass('current');
+				$currentSlide.show().css({'transform':'translate(0,0px)','transition':'2s'});
+			},600);
+	
+		}
+
+		$(".previous").click(function () {
+			var direction = '100vw';
+			var currentSlideDirection = '-100vw';
+			if (x === $slides.length-1) {
+				x = 0;
+				show(x,direction,currentSlideDirection);
+			} else {
+				x++;
+				show(x,direction,currentSlideDirection);
+			}
+		});
+
+		$(".next").click(function () {
+			var direction = '-100vw';
+			var currentSlideDirection = '100vw';
+			if (x === -$slides.length+1) {
+				x = 0;
+				show(x,direction,currentSlideDirection);
+			} else {
+				x--;
+				show(x,direction,currentSlideDirection);
+			}
+		});
+
+		show(x);
+
+
+	})();
+
+	
+
+	</script>
+	
+
+</body>
+</html>
