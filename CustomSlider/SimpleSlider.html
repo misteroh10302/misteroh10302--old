@@ -44,6 +44,35 @@
 		margin: 0 auto;
 	}
 
+	/* Adding a custom Modal*/
+	.current img {
+		cursor: pointer;
+	}
+	#currentSrc {
+		position: fixed;
+		top:0;
+		z-index: 8000000;
+		left:0;
+		right:0;
+		width: 100vw;
+		background-color: rgba(255,255,255,0.5);
+		display: none;
+	}
+	#currentSrc img {
+		min-height: 90vh;
+		max-height: 90vh;
+		width: auto;
+		margin: 5vh auto;
+		display: block;
+	}
+	#modalClose {
+		position: fixed;
+		top: 30px;
+		left: 60px;
+		z-index: 9000000;
+		cursor: pointer;
+	}
+
 	</style>
 
 	<div class="previous">
@@ -118,6 +147,16 @@
 
 	})();
 
+$('img').click(function(){
+	$('html').css('overflow','hidden');
+	var theImageSource = $(this)[0].currentSrc;
+	$('<div id="currentSrc" class="current-image"><img src="'+theImageSource+'"><span id="modalClose">X</span></div>').prependTo($('body')).fadeToggle();
+	$('#modalClose').click(function(){
+		$('#currentSrc').fadeToggle();
+		$('html').css('overflow','visible');
+	});
+
+});
 	
 
 	</script>
