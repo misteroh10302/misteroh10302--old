@@ -5,6 +5,7 @@
 	<title>Image Rollover</title>
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="lazy.js"></script>
 <link rel="icon" href="images/fav.png">
 </head>
 
@@ -238,20 +239,20 @@ ul {
 		<div class="main">
 			
 			<!-- <div class="ison"><img src="images/one.jpg" alt=""></div> -->
-			<div><img src="images/two.jpg" alt=""></div>
-			<div><img src="images/three.jpg" alt=""></div>
-			<div><img src="images/four.gif" alt=""></div>
-			<div><img src="images/six.jpg" alt=""></div>
-			<div><img src="images/seven.gif" alt=""></div>
-			<div><img src="images/eight.gif" alt=""></div>
+			<div><img class="lazy" data-original="images/two.jpg" alt=""></div>
+			<div><img class="lazy" data-original="images/three.jpg" alt=""></div>
+			<div><img class="lazy" data-original="images/four.gif" alt=""></div>
+			<div><img class="lazy" data-original="images/six.jpg" alt=""></div>
+			<div><img class="lazy" data-original="images/seven.gif" alt=""></div>
+			<div><img class="lazy" data-original="images/eight.gif" alt=""></div>
 		<!-- 	<div><img src="images/nine.jpg" alt=""></div> -->
-			<div><img src="images/ten.gif" alt=""></div>
+			<div><img class="lazy" data-original="images/ten.gif" alt=""></div>
 		
-			<div><img src="images/12.gif" alt=""></div>
-			<div><img src="images/13.jpg" alt=""></div>
+			<div><img class="lazy" data-original="images/12.gif" alt=""></div>
+			<div><img class="lazy" data-original="images/13.jpg" alt=""></div>
 			<!-- <div><img src="images/14.jpg" alt=""></div>
 			<div><img src="images/15.jpg" alt=""></div> -->
-			<div><img src="images/16.gif" alt=""></div>
+			<div><img class="lazy" data-original="images/16.gif" alt=""></div>
 			
 		</div>
 		
@@ -391,13 +392,17 @@ $('.closeme').click(function(){
 });
 
 $('.main').on('mouseenter','div',function(e){
-	console.log("hello");
 	$(this).removeClass('inactive');
 	$(this).siblings().addClass('inactive');
 }).on('mouseleave','div',function(e){
-	console.log("hello");
+	
 	$(this).siblings().removeClass('inactive');
 });
 
+
+$("img.lazy").lazyload({
+    effect : "fadeIn",
+    threshold : -100
+});
 </script>
 </html>
