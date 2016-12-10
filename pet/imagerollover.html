@@ -38,6 +38,7 @@ body {
 .main {
 	position: relative;
 	z-index: 100;
+	max-width: 400px;
 }
 
 .float {
@@ -53,8 +54,9 @@ img {
 	transition: .5s;
 }
 img:hover {
-	transform: scale(1.03);
-	transition: 5.s;
+	transform: scale(1.04);
+	transition: .5s;
+
 }
 
 .main div {
@@ -94,6 +96,7 @@ img:hover {
 	z-index: 9000000;
 	display: block;
 	cursor: pointer;
+	color:gray;
 }
 
 .right-slide {
@@ -145,70 +148,116 @@ a:hover {
 ul {
 	margin: 0px;
 }
+
+.about {
+	position: fixed;
+	right:10rem;
+	bottom: 1rem;
+	color:lightgray;
+	z-index: 800000;
+}
+
+.aboutme {
+	display: none;
+	position: fixed;
+	width: 50vw;
+	height: 50vh;
+
+	vertical-align: middle;
+	margin: 0 auto;
+	left:0;
+	right:0;
+	top:25vh;
+	color:black;
+	z-index: 900000;
+	text-align: center;
+}
+
+#back {
+	cursor: pointer;
+}
+#back:hover {
+	color:gray;
+}
+
+.inactive {
+	opacity: 0.5;
+}
 </style>
 <body>
-	<div onclick="hello()" class="click">about</div>
+	<div class="aboutme">
+		<p>email.</p>
+		<p>git.</p>
+		<p>You can email me</p>
+		<p>You can email me</p>
 
-	<div class="right-slide">
-
-		<div class="middle">
-			<h2>Some Things I Have Made</h2>
-			<ul>
-				<li><a href="#">Wet</a></li>
-				<li><a href="#">5 Doyers</a></li>
-				<li><a href="#">David Michael</a></li>
-				<li><a href="#">Boom BK</a></li>
-				<li><a href="#">Terrible Records</a></li>
-				<li><a href="#">Discwoman</a></li>
-				<li><a href="#">Zebra Katz</a></li>
-				<li><a href="#">House Of Ladosha</a></li>
-				<li><a href="#">Done Digital</a></li>
-				<li><a href="#">Pet.Cool</a></li>
-				<li><a href="#">Cara Stricker</a></li>
-				<li><a href="#">The Young Turks x Siberia Records</a></li>
-			</ul>
-		</div>
-		<div class="closeme">Close</div>
-
-
+		<span id="back">back</span>
 	</div>
-
-	<div class="name">
-		<span>M</span>
-		<span>A</span>
-		<span>D</span>
-		<span>E</span>
-		<span>L</span>
-		<span>I</span>
-		<span>N</span>
-		<span>E</span>
-	</div>
-
-	<div class="cover"></div>
-
-	<div class="main">
-		
-		<div class="ison"><img src="images/one.jpg" alt=""></div>
-		<div><img src="images/two.jpg" alt=""></div>
-		<div><img src="images/three.jpg" alt=""></div>
-		<div><img src="images/four.gif" alt=""></div>
-		<div><img src="images/six.jpg" alt=""></div>
-		<div><img src="images/seven.gif" alt=""></div>
-		<div><img src="images/eight.gif" alt=""></div>
-		<div><img src="images/nine.jpg" alt=""></div>
-		<div><img src="images/ten.gif" alt=""></div>
 	
-		<div><img src="images/12.gif" alt=""></div>
-		<div><img src="images/13.jpg" alt=""></div>
-		<div><img src="images/14.jpg" alt=""></div>
-		<div><img src="images/15.jpg" alt=""></div>
-		<div><img src="images/16.gif" alt=""></div>
+		<div onclick="about()" class="about">about</div>
+		<div onclick="hello()" class="click">Work</div>
 		
-	</div>
-
-	<div class="float">
-		A collection of things I like
-	</div>
+		<div class="right-slide">
+		
+			<div class="middle">
+				<h2>Some Things I Have Made</h2>
+				<ul>
+					<li><a href="#">Wet</a></li>
+					<li><a href="#">5 Doyers</a></li>
+					<li><a href="#">David Michael</a></li>
+					<li><a href="#">Boom BK</a></li>
+					<li><a href="#">Terrible Records</a></li>
+					<li><a href="#">Discwoman</a></li>
+					<li><a href="#">Zebra Katz</a></li>
+					<li><a href="#">House Of Ladosha</a></li>
+					<li><a href="#">Done Digital</a></li>
+					<li><a href="#">Pet.Cool</a></li>
+					<li><a href="#">Cara Stricker</a></li>
+					<li><a href="#">The Young Turks x Siberia Records</a></li>
+				</ul>
+		
+			</div>
+			<div class="closeme">Close</div>
+		
+		
+		</div>
+		
+		<div class="name">
+			<span>M</span>
+			<span>A</span>
+			<span>D</span>
+			<span>E</span>
+			<span>L</span>
+			<span>I</span>
+			<span>N</span>
+			<span>E</span>
+		</div>
+		
+		<div class="cover"></div>
+		<span id="main">
+		<div class="main">
+			
+			<!-- <div class="ison"><img src="images/one.jpg" alt=""></div> -->
+			<div><img src="images/two.jpg" alt=""></div>
+			<div><img src="images/three.jpg" alt=""></div>
+			<div><img src="images/four.gif" alt=""></div>
+			<div><img src="images/six.jpg" alt=""></div>
+			<div><img src="images/seven.gif" alt=""></div>
+			<div><img src="images/eight.gif" alt=""></div>
+		<!-- 	<div><img src="images/nine.jpg" alt=""></div> -->
+			<div><img src="images/ten.gif" alt=""></div>
+		
+			<div><img src="images/12.gif" alt=""></div>
+			<div><img src="images/13.jpg" alt=""></div>
+			<!-- <div><img src="images/14.jpg" alt=""></div>
+			<div><img src="images/15.jpg" alt=""></div> -->
+			<div><img src="images/16.gif" alt=""></div>
+			
+		</div>
+		
+		<div class="float">
+			Making things.
+		</div></span>
 	<footer></footer>
 </body>
 
@@ -233,9 +282,7 @@ ul {
 			// $(this).css('transform','rotateZ('+ thenum+'deg)');
 	});
 
-$( "div" ).draggable({
-  addClasses: false
-});
+
 
 $(' img').load(function(){
 	$(this).css('opacity','1');
@@ -296,41 +343,41 @@ $(document).ready(function() {
 
 $('.name').mouseover(function() {
 	 setTimeout( function(){
-		$('span').eq(0).css('transform','translateY(50px)');
+		$('.name span').eq(0).css('transform','translateY(50px)');
 	},100);
 	setTimeout( function(){
-		$('span').eq(1).css('transform','translateY(50px)');
+		$('.name span').eq(1).css('transform','translateY(50px)');
 	},200);setTimeout( function(){
-		$('span').eq(2).css('transform','translateY(50px)');
+		$('.name span').eq(2).css('transform','translateY(50px)');
 	},300);setTimeout( function(){
-		$('span').eq(3).css('transform','translateY(50px)');
+		$('.name span').eq(3).css('transform','translateY(50px)');
 	},400);setTimeout( function(){
-		$('span').eq(4).css('transform','translateY(50px)');
+		$('.name span').eq(4).css('transform','translateY(50px)');
 	},500);setTimeout( function(){
-		$('span').eq(5).css('transform','translateY(50px)');
+		$('.name span').eq(5).css('transform','translateY(50px)');
 	},600);setTimeout( function(){
-		$('span').eq(6).css('transform','translateY(50px)');
+		$('.name span').eq(6).css('transform','translateY(50px)');
 	},700);setTimeout( function(){
-		$('span').eq(7).css('transform','translateY(50px)');
+		$('.name span').eq(7).css('transform','translateY(50px)');
 	},800);
 }).mouseout(function() {
 	 setTimeout( function(){
-		$('span').eq(0).css('transform','translateY(0px)');
+		$('.name span').eq(0).css('transform','translateY(0px)');
 	},100);
 	setTimeout( function(){
-		$('span').eq(1).css('transform','translateY(0px)');
+		$('.name span').eq(1).css('transform','translateY(0px)');
 	},200);setTimeout( function(){
-		$('span').eq(2).css('transform','translateY(0px)');
+		$('.name span').eq(2).css('transform','translateY(0px)');
 	},300);setTimeout( function(){
-		$('span').eq(3).css('transform','translateY(0px)');
+		$('.name span').eq(3).css('transform','translateY(0px)');
 	},400);setTimeout( function(){
-		$('span').eq(4).css('transform','translateY(0px)');
+		$('.name span').eq(4).css('transform','translateY(0px)');
 	},500);setTimeout( function(){
-		$('span').eq(5).css('transform','translateY(0px)');
+		$('.name span').eq(5).css('transform','translateY(0px)');
 	},600);setTimeout( function(){
-		$('span').eq(6).css('transform','translateY(0px)');
+		$('.name span').eq(6).css('transform','translateY(0px)');
 	},700);setTimeout( function(){
-		$('span').eq(7).css('transform','translateY(0px)');
+		$('.name span').eq(7).css('transform','translateY(0px)');
 	},800);
 });
 
@@ -343,10 +390,14 @@ $('.closeme').click(function(){
 	$('.right-slide').css('right','-50vw');
 });
 
-
-
-
-
+$('.main').on('mouseenter','div',function(e){
+	console.log("hello");
+	$(this).removeClass('inactive');
+	$(this).siblings().addClass('inactive');
+}).on('mouseleave','div',function(e){
+	console.log("hello");
+	$(this).siblings().removeClass('inactive');
+});
 
 </script>
 </html>
