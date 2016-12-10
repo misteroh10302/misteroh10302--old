@@ -6,6 +6,7 @@
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="lazy.js"></script>
+<script src="handlebars.min-latest.js"></script>
 <link rel="icon" href="images/fav.png">
 </head>
 
@@ -186,6 +187,10 @@ ul {
 }
 </style>
 <body>
+
+
+	<div class="books"></div>
+
 	<div class="aboutme">
 		<p>email.</p>
 		<p>git.</p>
@@ -236,33 +241,42 @@ ul {
 		
 		<div class="cover"></div>
 		<span id="main">
-		<div class="main">
+		<script class="main" type="text/x-handlebars-template">
+			<h2>{{myname}}</h2>
 			
-			<!-- <div class="ison"><img src="images/one.jpg" alt=""></div> -->
 			<div><img class="lazy" data-original="images/two.jpg" alt=""></div>
 			<div><img class="lazy" data-original="images/three.jpg" alt=""></div>
 			<div><img class="lazy" data-original="images/four.gif" alt=""></div>
 			<div><img class="lazy" data-original="images/six.jpg" alt=""></div>
 			<div><img class="lazy" data-original="images/seven.gif" alt=""></div>
 			<div><img class="lazy" data-original="images/eight.gif" alt=""></div>
-		<!-- 	<div><img src="images/nine.jpg" alt=""></div> -->
+	
 			<div><img class="lazy" data-original="images/ten.gif" alt=""></div>
 		
 			<div><img class="lazy" data-original="images/12.gif" alt=""></div>
 			<div><img class="lazy" data-original="images/13.jpg" alt=""></div>
-			<!-- <div><img src="images/14.jpg" alt=""></div>
-			<div><img src="images/15.jpg" alt=""></div> -->
+			
 			<div><img class="lazy" data-original="images/16.gif" alt=""></div>
 			
-		</div>
+		</script>
 		
 		<div class="float">
 			Making things.
 		</div></span>
+		
+
 	<footer></footer>
 </body>
 
 <script>
+var source = $(".main").html();
+var template = Handlebars.compile(source);
+var data = {myname:'Madeline' };
+var newListItemHTML = template(data);
+
+for (x = 0; x<3; x++) {
+	$('#main').append(newListItemHTML);
+}
 
 
 	$('article').each( function(index) {
@@ -403,6 +417,27 @@ $('.main').on('mouseenter','div',function(e){
 $("img.lazy").lazyload({
     effect : "fadeIn",
     threshold : -100
+});
+
+var googleBooksUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:"; // Static part of the Google Books URL
+
+$('img').on('click', function(e) {  // When the user submits the form
+   e.preventDefault();   // Stop the page from reloading
+   var isbn = $('#isbn').val();   // Find out what they entered into the isbn input
+    $.ajax({        // Make an ajax GET request
+      type:'GET',
+      url: googleBooksUrl + isbn,     // The URL where we can get the book info
+      success: function( response ) {
+      	console.log(response);
+
+  // Set bookInfo equal to the object stored in the volumeInfo object in the response that was returned
+        var bookInfo = response.items[0].volumeInfo;
+
+  // The HTML/data we want to add to the list
+        var listItemHTML = '<li><h2>' + bookInfo.title + '</h2><p>' + bookInfo.description + '</p><img src="' + bookInfo.imageLinks.thumbnail + '"><a href="' + bookInfo.previewLink + '">Preview Book</a></li>'
+    $('.books').append(listItemHTML);  // Append each book to the list
+      }
+  });
 });
 </script>
 </html>
