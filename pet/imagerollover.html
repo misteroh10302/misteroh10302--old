@@ -243,19 +243,16 @@ ul {
 		<span id="main">
 		<script class="main" type="text/x-handlebars-template">
 			<h2>{{myname}}</h2>
-			
 			<div><img class="lazy" data-original="images/two.jpg" alt=""></div>
 			<div><img class="lazy" data-original="images/three.jpg" alt=""></div>
 			<div><img class="lazy" data-original="images/four.gif" alt=""></div>
 			<div><img class="lazy" data-original="images/six.jpg" alt=""></div>
 			<div><img class="lazy" data-original="images/seven.gif" alt=""></div>
 			<div><img class="lazy" data-original="images/eight.gif" alt=""></div>
-	
 			<div><img class="lazy" data-original="images/ten.gif" alt=""></div>
-		
 			<div><img class="lazy" data-original="images/12.gif" alt=""></div>
 			<div><img class="lazy" data-original="images/13.jpg" alt=""></div>
-			
+		
 			<div><img class="lazy" data-original="images/16.gif" alt=""></div>
 			
 		</script>
@@ -269,11 +266,20 @@ ul {
 </body>
 
 <script>
-var source = $(".main").html();
-var template = Handlebars.compile(source);
-var data = {myname:'Madeline' };
-var newListItemHTML = template(data);
 
+
+
+
+//Using Handlebars to seperate our JS
+// Get the source
+var source = $(".main").html();
+//Convert to template
+var template = Handlebars.compile(source);
+//Create the fill in data
+var data = {myname:'Madeline' };
+//Send the data in to the template
+var newListItemHTML = template(data);
+//Append it to your document
 for (x = 0; x<3; x++) {
 	$('#main').append(newListItemHTML);
 }
@@ -419,25 +425,7 @@ $("img.lazy").lazyload({
     threshold : -100
 });
 
-var googleBooksUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:"; // Static part of the Google Books URL
 
-$('img').on('click', function(e) {  // When the user submits the form
-   e.preventDefault();   // Stop the page from reloading
-   var isbn = $('#isbn').val();   // Find out what they entered into the isbn input
-    $.ajax({        // Make an ajax GET request
-      type:'GET',
-      url: googleBooksUrl + isbn,     // The URL where we can get the book info
-      success: function( response ) {
-      	console.log(response);
 
-  // Set bookInfo equal to the object stored in the volumeInfo object in the response that was returned
-        var bookInfo = response.items[0].volumeInfo;
-
-  // The HTML/data we want to add to the list
-        var listItemHTML = '<li><h2>' + bookInfo.title + '</h2><p>' + bookInfo.description + '</p><img src="' + bookInfo.imageLinks.thumbnail + '"><a href="' + bookInfo.previewLink + '">Preview Book</a></li>'
-    $('.books').append(listItemHTML);  // Append each book to the list
-      }
-  });
-});
 </script>
 </html>

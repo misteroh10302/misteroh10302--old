@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Online Gallery Concept</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<script id="main-information" type="text/x-handlebars-template">
+		<section>
+			<h1>
+				{{clickShow}}
+				{{showname}}
+			</h1>
+			<h2> {{showSubHeader}} </h2>
+		</section>
+	</script>
+	
+	<script class="gallery" type="text/x-handlebars-template">
+		<section>
+			<div>
+				<img src="{{url}}" alt="{{alt}}">
+				<span onclick="click()"> {{index}} </div>
+				{{click}}
+			</div>
+		</section>
+	</script>
+
+</body>
+	<script src="js/jquery.js"></script>
+	<script src="js/lazy.js"></script>
+	<script src="js/handlebars.min-latest.js"></script>
+	<script src="js/main.js"></script>
+
+</html>
