@@ -5,3 +5,7 @@ img {
 body script {
 	display: block;
 }*/
+
+body {
+	height: 101vh;
+}
