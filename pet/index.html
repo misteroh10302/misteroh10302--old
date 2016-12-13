@@ -199,8 +199,7 @@ ul {
 
 		<span id="back">back</span>
 	</div>
-	
-		<div onclick="about()" class="about">about</div>
+
 		<div onclick="hello()" class="click">Work</div>
 		
 		<div class="right-slide">
@@ -242,17 +241,11 @@ ul {
 		<div class="cover"></div>
 		<span id="main">
 		<script class="main" type="text/x-handlebars-template">
-			<h2>{{myname}}</h2>
-			<div><img class="lazy" data-original="images/two.jpg" alt=""></div>
-			<div><img class="lazy" data-original="images/three.jpg" alt=""></div>
-			<div><img class="lazy" data-original="images/four.gif" alt=""></div>
-			<div><img class="lazy" data-original="images/six.jpg" alt=""></div>
+
+				<div><img class="lazy" data-original="images/four.gif" alt=""></div>
+			
 			<div><img class="lazy" data-original="images/seven.gif" alt=""></div>
-			<div><img class="lazy" data-original="images/eight.gif" alt=""></div>
 			<div><img class="lazy" data-original="images/ten.gif" alt=""></div>
-			<div><img class="lazy" data-original="images/12.gif" alt=""></div>
-			<div><img class="lazy" data-original="images/13.jpg" alt=""></div>
-		
 			<div><img class="lazy" data-original="images/16.gif" alt=""></div>
 			
 		</script>
@@ -280,7 +273,7 @@ var data = {myname:'Madeline' };
 //Send the data in to the template
 var newListItemHTML = template(data);
 //Append it to your document
-for (x = 0; x<3; x++) {
+for (x = 0; x<1; x++) {
 	$('#main').append(newListItemHTML);
 }
 
@@ -342,7 +335,7 @@ $(document).ready(function() {
  if( isDesktop ){ 
 
 
- 			$( " img"  ).mouseover(function() {
+ 			$( "img"  ).mouseover(function() {
 				var URL = $(this).attr('src');
 			
 		   	 $('.cover').css({'opacity':'1',"background-image":'url('+URL+')','transition': 'opacity .25s ease-in-out',
@@ -422,7 +415,7 @@ $('.main').on('mouseenter','div',function(e){
 
 $("img.lazy").lazyload({
     effect : "fadeIn",
-    threshold : -100
+    threshold : 100
 });
 
 </script>
