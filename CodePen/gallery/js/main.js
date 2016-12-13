@@ -53,20 +53,18 @@ var request = $.ajax({  url: "http://api.tumblr.com/v2/blog/natalieomoore.tumblr
     	
     	x=11;
     	$(window).scroll(function() {
-	    	 if($(window).scrollTop() + $(window).height()-100 === $(document).height()-100) {
-	    	 		// y = 0;
-		      	// 	for (x=y; x<y+10; x++ ) {
+    		var nearToBottom = 200;
 
-			    			// console.log(posts.response.posts.length);
+			if ($(window).scrollTop() + $(window).height() > 
+			    $(document).height() - nearToBottom) { 
+			 			// console.log(posts.response.posts.length);
 			    		var imageURL = posts.response.posts[x].photos[0].original_size.url
 			    		$('body').append('<img class="new" src="'+imageURL+'">');
 			    			
 			    		x+=1;
 			    		console.log(x);
-			    		// y+=10;
-
-		    		// }
-	   		}	
+			} 
+	    	
     	});
     	
     },
