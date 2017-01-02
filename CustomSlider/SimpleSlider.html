@@ -7,6 +7,7 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.1/velocity.min.js"></script>
 </head>
 <body>
 	<style>
@@ -106,21 +107,32 @@
 		x = 0;	
 
 		function show(x,direction,currentSlideDirection) {
-			$('.current').css('transform','translate('+currentSlideDirection+',0px');
+			
+			$('.current').css({'transform':'translate('+currentSlideDirection+',0px','transition':'6s'});
 
 			setTimeout(function delay(){
-				$slides.hide().css({'transform':'translate('+direction+',0px)','transition':'1s'}).delay(20000);
-				$slides.removeClass('current');
+			
+				$slides.not('.current').css({'transform':'translate('+direction+',0px)','transition':'2s'}).hide();
 				$currentSlide = $slides.eq(x);
 				$currentSlide.addClass('current');
 				$currentSlide.show().css({'transform':'translate(0,0px)','transition':'2s'});
+				
+				setTimeout(function() {
+			       $slides.not($currentSlide).removeClass('current');
+			   }, 0);
+
+				
+
 			},600);
-	
+			
+				 
+			
 		}
 
 		$(".previous").click(function () {
-			var direction = '100vw';
-			var currentSlideDirection = '-100vw';
+			
+			var direction = '150vw';
+			var currentSlideDirection = '-150vw';
 			if (x === $slides.length-1) {
 				x = 0;
 				show(x,direction,currentSlideDirection);
@@ -131,8 +143,9 @@
 		});
 
 		$(".next").click(function () {
-			var direction = '-100vw';
-			var currentSlideDirection = '100vw';
+			
+			var direction = '-150vw';
+			var currentSlideDirection = '150vw';
 			if (x === -$slides.length+1) {
 				x = 0;
 				show(x,direction,currentSlideDirection);
