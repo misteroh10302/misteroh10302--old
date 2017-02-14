@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Raleway');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	text-align: center;
+	background: #293c27;
+}
+
+p {
+	color: #fff;
+	font-size: 20px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: lighter;
+	line-height: 1.25em;
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+h1 {
+	color: #507616;
+	font-size: 4em;
+	font-weight: 100;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+}
+
+#slogan {
+	color: #fff;
+	font-size: 1em;
+	font-family: 'Poppins', sans-serif;
+	margin-bottom: 25px;
+}
+
+nav a {
+	color: #f1b10c;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.5em;
+	margin-right: 75px;
+	text-align: center;
+}
+
+img {
+	margin-bottom: 50px;
+	width: 100%;
+}
+
+#native {
+	color: #f1b10c;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	text-align: left;
+	list-style-type: none;
+	margin-top: 25px;
+	margin-left: 25px;
+}
+ul {
+	color: #fff;
+	font-size: 1em;
+	font-family: 'Poppins', sans-serif;
+	text-align: left;
+	list-style-type: none;
+	margin-left: 25px;
+	margin-bottom: 25px;
+}
+
+#request {
+	color: #f1b10c;
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+a {
+	color: #507616;
+	text-decoration: none;
+}
+
+hr {
+	height: .25em;
+	background-color: #fff;
+}
