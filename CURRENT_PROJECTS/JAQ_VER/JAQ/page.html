@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Jaqueline Vergudoa</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+	<script src="js/mouse.min.js"></script>
+</head>
+
+<style>
+
+html {
+	overflow-y: hidden;
+}
+#gallery div {
+     /*text-align: center; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+		position: relative;
+    float: left;
+    width: 25%;
+}
+
+#gallery {
+	width: 400vw;
+}
+
+img {}
+</style>
+<body>
+
+	<header>
+		<div class="brand">
+			<a href="index.html">Jacuqeline Verdugao</a>
+		</div>
+		<nav>
+			<ul>
+				<li id="editorial">Editorial</li>
+				<li id="studio" >Studio</li>
+				<li id="concert">Concerts</li>
+			</ul>
+		</nav>
+
+		<div class="contact">contact</div>
+	</header>
+
+	<section id="gallery">
+		<div>
+			<img src="images/e1.jpg" class="edit mySlides" alt="">
+			<span class="title">The Image Title</span>
+		</div>
+		<div>
+			<img src="images/e2.jpg" class="studio mySlides" alt="">
+			<span class="title">The Image Title</span>
+		</div>
+		<div>
+			<img src="images/e1.jpg" class="mySlides" alt="">
+			<span class="title">The Image Title</span>
+		</div>
+		<div>
+			<img src="images/e1.jpg" class="concert mySlides" alt="">
+			<span class="title">The Image Title</span>
+		</div>
+		<div>
+			<img src="images/e1.jpg" class="edit mySlides"  alt="">
+			<span class="title">The Image Title</span>
+		</div>
+		<a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)"></a>
+<a class="w3-btn-floating w3-display-right" onclick="plusDivs(+1)"></a>
+
+
+	</section>
+
+</body>
+
+<script>
+$(function() {
+    $("html, body, *").mousewheel(function(event, delta) {
+        this.scrollLeft -= (delta * 50);
+        event.preventDefault();
+    });
+});
+	$('#editorial').on('click',function(){
+			$('#allimages div img').not('.edit').css({'-webkit-filter': 'blur(5px)', 'filter':' blur(5px)'}).fadeIn();
+			$('.edit').css({'-webkit-filter': 'blur(0px)', 'filter':' blur(0px)'}).fadeIn();
+	});
+
+	$('#concert').on('click',function(){
+			$('#allimages div img').not('.concert').css({'-webkit-filter': 'blur(5px)', 'filter':' blur(5px)'}).fadeIn();
+			$('.concert').css({'-webkit-filter': 'blur(0px)', 'filter':' blur(0px)'}).fadeIn();
+	});
+
+	$('#studio').on('click',function(){
+			$('#allimages div img').not('.studio').css({'-webkit-filter': 'blur(5px)', 'filter':' blur(5px)'}).fadeIn();
+			$('.studio').css({'-webkit-filter': 'blur(0px)', 'filter':' blur(0px)'}).fadeIn();
+	});
+
+	$('.brand').on('click',function(){
+			$('#allimages div img').css({'-webkit-filter': 'blur(0px)', 'filter':' blur(0px)'});
+	});
+// $(document).keydown(function(e){
+//     if (e.keyCode == 37) {
+//        plusDivs(-1)
+//        return false;
+//     } else if (e.keyCode == 39) {
+//     	plusDivs(+1)
+//        return false;
+//     }
+// });
+// 	var slideIndex = 1;
+// showDivs(slideIndex);
+//
+// function plusDivs(n) {
+//     showDivs(slideIndex += n);
+// }
+//
+// function showDivs(n) {
+//     var i;
+//     var x = document.getElementsByClassName("mySlides");
+//     if (n > x.length) {slideIndex = 1}
+//     if (n < 1) {slideIndex = x.length} ;
+//     for (i = 0; i < x.length; i++) {
+//         $(x[i]).css('display','none');
+//     }
+//     $(x[slideIndex-1]).css('display','block').hide().fadeIn(600);
+// }
+// </script>
+</html>

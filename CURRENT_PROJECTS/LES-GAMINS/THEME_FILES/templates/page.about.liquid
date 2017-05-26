@@ -1,0 +1,181 @@
+<!-- /templates/page.liquid -->
+
+<div class="wrapper page-margin">
+	{% if settings.product_breadcrumbs %}
+      {% include 'breadcrumb' %}
+    {% endif %}
+  <div class="grid">
+    <div class="grid__item aboutgrid">
+   <!--    <h1 class="text-center h2">{{ page.title }}</h1> -->
+      <div class="rte">
+        <a class="anchor-link-our-story" name="our-story"></a>
+      	<h1>{{settings.aboutheadline}}</h1>
+		<!--<div class="col-2 clearfix">
+			<div class="col-2-item">
+				<img src="{{ 'imageone.png' | asset_url }}">
+			</div>
+			<div class="col-2-item">
+				<img src="{{ 'imagetwo.png' | asset_url }}">
+			</div>
+		</div>-->
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</div>
+ <button id="join-tots">
+  I want to join
+</button>
+<script>
+  var currentURL = window.location.hash;
+
+ $(document).load(function(){
+    if ($(window).width() < 960) {
+
+      if (currentURL.includes('#our-story')) {
+          $('body,html').animate({
+              scrollTop: 0
+
+          });
+        }
+        else if (currentURL.includes('#our-philosophy')) {
+
+          var newScrollTop =  $('#our-mission')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop: newScrollTop - 90
+
+          });
+        }
+
+         else if (currentURL.includes('#bags')) {
+
+           var newScrollTop =  $('#wear-share')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop:  newScrollTop - 90
+
+          });
+        }
+        else if (currentURL.includes('#from-cart')) {
+            $('body,html').animate({
+              scrollTop: 3140
+
+          });
+        }
+
+    } else if ($(window).width() > 960){
+
+      if (currentURL.includes('#our-story')) {
+          $('body,html').animate({
+              scrollTop: 0
+
+          });
+        }
+        else if (currentURL.includes('#our-philosophy')) {
+           var newScrollTop =  $('#our-mission')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop: newScrollTop - 150
+
+          });
+        }
+
+         else if (currentURL.includes('#bags')) {
+              var newScrollTop =  $('#wear-share')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop:  newScrollTop - 150
+
+          });
+        }
+        else if (currentURL.includes('#from-cart')) {
+            $('body,html').animate({
+              scrollTop: 2650
+
+          });
+        }
+    }
+});
+
+  $(window).resize(function() {
+
+      if ($(window).width() < 960) {
+
+      if (currentURL.includes('#our-story')) {
+          $('body,html').animate({
+              scrollTop: 0
+
+          });
+        }
+        else if (currentURL.includes('#our-philosophy')) {
+
+          var newScrollTop =  $('#our-mission')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop: newScrollTop - 90
+
+          });
+        }
+
+         else if (currentURL.includes('#bags')) {
+
+           var newScrollTop =  $('#wear-share')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop:  newScrollTop - 90
+
+          });
+        }
+        else if (currentURL.includes('#from-cart')) {
+            $('body,html').animate({
+              scrollTop: 3140
+
+          });
+        }
+
+    } else if ($(window).width() > 960){
+
+      if (currentURL.includes('#our-story')) {
+          $('body,html').animate({
+              scrollTop: 0
+
+          });
+        }
+        else if (currentURL.includes('#our-philosophy')) {
+           var newScrollTop =  $('#our-mission')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop: newScrollTop - 175
+
+          });
+        }
+
+         else if (currentURL.includes('#bags')) {
+              var newScrollTop =  $('#wear-share')[0].offsetTop;
+            $('body,html').animate({
+              scrollTop:  newScrollTop - 175
+
+          });
+        }
+        else if (currentURL.includes('#from-cart')) {
+            $('body,html').animate({
+              scrollTop: 2650
+
+          });
+        }
+    }
+
+
+
+
+
+  });
+
+
+$('#join-tots').on('click',function(){
+		if (x>=1) return;
+		else {
+			Shopify.addItem(35369401927,1);
+			Shopify.onItemAdded();
+			$('#join-tots').html('Thank You!');
+			$('#join-tots').addClass('join-blue');
+			x++;
+		}
+});
+
+
+</script>

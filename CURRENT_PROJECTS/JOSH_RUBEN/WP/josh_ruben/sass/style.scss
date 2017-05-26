@@ -1,0 +1,266 @@
+/*!
+Theme Name: josh_ruben
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: josh_ruben
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+josh_ruben is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# ElementsAMa
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+
+.header-mobile {
+	display:none;
+}
+
+#mobile-nav {
+	display: none;
+}
+@media screen and (max-width: 1024px){
+	.tabs .clear {
+	    height: auto;
+	    padding-bottom: 30px;
+			padding:0px;
+	}
+	.acting iframe {
+		margin-left: 0px;
+	}
+		body.custom-background {
+	    background-size: contain !important;
+	}
+	.main-navigation ul {
+    display: none !important;
+}
+	.open {
+    left: 0;
+    top: 100vh;
+    padding: 60px;
+    width: 100vw;
+	}
+	html {
+		overflow: visible;
+	}
+
+	img {
+		width: 100%;
+	}
+	.directing iframe {
+	    max-width: 100%;
+	    width: 100%;
+	    float: none;
+	    padding: 15px 0px;
+	}
+  .acting, .directing, .mindhousepodcast, .newsandstuff, .writing {
+    display:block !important;
+  }
+
+	#mobile-nav {
+		display:block;
+	}
+	.header-mobile {
+		display:block;
+		width:100vw;
+		text-align:left;
+		position:fixed;
+		background-color:black;
+		color:white;
+		top:0;
+		left:0;
+		z-index: 100000;
+		.mobile-button {
+			background-color: transparent;
+			color: white;
+			border: 0;
+			padding: 15px;
+			float:right;
+		}
+	}
+
+	.mobile-logo {
+		display:inline-block;
+		float:left;
+		padding: 0px 30px;
+		h1 {
+			font-size: 1em;
+		}
+	}
+  .drawer {
+      width: 100vw;
+      position: absolute;
+      left: 0;
+      height: auto;
+      border: 0px solid black;
+      background-color: white;
+      transition: 0s ease-in-out;
+      top: 30vh;
+			padding:0px;
+  }
+
+  .tabs div {
+      // transition: 0.25s ease-in-out;
+      height: auto;
+      width: auto;
+      overflow-y: auto;
+      padding: 30px 30px;
+      float:none;
+      position: initial;
+      /* margin-left: -5px; */
+      /* padding-bottom: 60px; */
+  }
+
+
+
+	.site-title {
+		    text-align: center;
+	}
+	header {
+	    padding: 30px;
+	    position: relative;
+	   transform: none;
+	}
+	.site-branding {
+		    margin-top: 4em;
+	}
+	.close-mobile {
+		padding: 15px;
+		float: right;
+		text-transform: uppercase;
+		letter-spacing: .25rem;
+	}
+	#mobile-nav {
+		position: fixed;
+		top: 0;
+		background-color: black;
+		color: white;
+		width: 100%;
+		left: 0;
+		z-index: 99999999999;
+		height: 100vh;
+		display:none;
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				display: block;
+				font-size: 2em;
+				padding: 30px 30px 15px;
+			}
+		}
+		a {
+			color:white;
+			&:visited {
+				color:white;
+			}
+		}
+	}
+
+  .close {
+    display: none;
+  }
+
+	.menu-toggle, .main-navigation.toggled ul {
+	    display: none;
+	}
+}
+
+.social-link {
+	display:inline-block !important;
+}

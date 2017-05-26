@@ -1,0 +1,43 @@
+{% unless settings.home_page_content == blank or settings.home_page_content.empty? %}
+{% assign page = pages[settings.home_page_content] %}
+
+{% assign page_src = page.content | escape %}
+{% if page_src contains '&lt;img' %}
+  {% assign homepage_page_grid = 'one-whole' %}
+{% else %}
+  {% assign homepage_page_grid = 'large--five-sixths push--large--one-twelfth' %}
+{% endif %}
+<div class="homepage-page {{ settings.homepage_page_color }}">
+  <div class="wrapper">
+    <div class="grid">
+      <div class="grid__item {{ homepage_page_grid }} clearfix">
+        {% if settings.home_page_show_title %}<h4 class="home__subtitle">{{ page.title }}</h4>{% endif %}
+        <div class="rte homepage-page__content clearfix">
+           <a href="{{settings.buttonlink}}">
+              <div class="col-2-item" style="background-image:url({{ 'homegridtwo.jpg' | asset_url }})">
+                {% if settings.show_grid_left %}
+                  <div class="vertical">
+                     <h1> {{settings.gridheadline}}</h1>
+                     <h2> {{settings.gridsubhead}}</h2>
+                    <button>{{settings.gridbutton}}</button>
+                    </div>
+                {% endif %}
+              </div>
+            </a>
+          <a href="{{settings.rightbuttonlink}}">
+          <div class="col-2-item"  style="float:right;background-image:url({{ 'homegridright.jpg' | asset_url }})">
+              {% if settings.show_grid_right %}
+                <div class="vertical">
+                     <h1> {{settings.rightgridheadline}}</h1>
+                     <h2> {{settings.rightgridsubhead}}</h2>
+                    <button>{{settings.rightgridbutton}}</button>
+                </div>
+              {% endif %}
+          </div>
+          </a>
+        </div> <!-- close homepage content -->
+      </div>
+    </div>
+  </div>
+</div>
+{% endunless %}

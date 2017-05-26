@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adeline Mai</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<style>
+	.ui-rotatable-handle {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background-color: black ;
+    background-size: 100%;
+    left: 2px;
+    bottom: 2px;
+    position: absolute;
+    top:-50px;
+    right:0;
+    left:0;
+    margin: 0 auto;
+}
+#elementResizable {
+    border: 1px solid #000000;
+    width: 300px;
+    height: 40px;
+    overflow: visible;
+    position:relative;
+
+}
+#content {
+    position:absolute;
+    top:0;left:0;bottom:0;right:0;
+    background:#CCC;
+    overflow:hidden;
+    background-image: url(images/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#nwgrip, #negrip, #swgrip, #segrip, #ngrip, #egrip, #sgrip, #wgrip {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+
+#negrip {
+    top:-6px; right:-6px;
+}
+#segrip {
+    bottom:-6px; right:-6px;
+}
+#nwgrip {
+    top:-6px; left:-6px;
+}
+#swgrip {
+    bottom:-6px; left:-6px;
+}
+#ngrip {
+    top:-6px; 
+    left:50%; margin-left:-6px;
+}
+#egrip {
+    right:-6px; 
+    top:50%; margin-top:-6px;
+}
+#sgrip {
+    bottom:-6px; 
+    left:50%; margin-left:-6px;
+}
+#wgrip {
+    left:-6px; 
+    top:50%; margin-top:-6px;
+}
+.ui-resizable-handle {
+    opacity: 0;
+}
+.ui-resizable-n {
+    cursor: n-resize;
+    height: 10px;
+    width: 10px;
+    top: -5px;
+    left: 0;
+    background-color: red;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+     height: 10px;
+    width: 10px;
+ 
+    height: 10px;
+     background-color: red;
+}
+
+.ui-resizable-s {
+    cursor: e-resize;
+     height: 10px;
+    width: 10px;
+    height: 10px;
+     background-color: red;
+}
+
+.ui-resizable-w {
+    cursor: e-resize;
+     height: 10px;
+    width: 10px;
+
+ right:0;
+  height: 10px;
+     background-color: red;
+         left: inherit;
+         top:     0;
+          bottom:0;
+
+}
+
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+      background-color: rgba(0, 0, 0, 0.66);
+  top:0;
+  z-index: 2;
+  display: none;
+  color:white;
+  transition:  0.15s ease-in-out;
+}
+
+.menu div {
+  position: relative;
+  transform: translateY(-40%);
+  top:40%;
+  padding-bottom: 90px;
+}
+
+.menu a {
+  display: block;
+  color:white;
+}
+
+.drag {
+  position: absolute;
+  margin-top: -50px;
+}
+
+.image {
+  width: auto;
+  z-index: 15;
+}
+
+
+.trigger-bacg {
+  z-index: 10;
+  position:  absolute;
+   height: 100vh;
+    width: 100vw;
+}
+
+canvas {
+  z-index: 20;
+}
+</style>
+</head>
+<body>
+	<nav>
+		<h1>
+			<a href="#">Adeline Mai</a>
+		</h1>
+	</nav>
+
+    <header>
+        <span>
+            
+        </span>
+    </header>
+
+    <div class="trigger-bacg"></div>
+
+  <section class="menu">
+  
+      <div>
+        <h1>Adeline Mai </h1>
+        <h2>Is a photographer form LA</h2>
+      </div>
+      <div>
+        <a href="">
+          <h2>Work</h2>
+        </a>
+        <a href="commercial.html">
+          <h2>Commercial</h2>
+        </a>
+        <a href="">
+          <h2>Personal</h2>
+        </a>
+      </div>
+  
+  </section>
+
+	<main>
+<style>
+  .test {
+    margin: 60px;
+      background:#ED1C24;
+    height:2px;
+ right:0;
+ left:0;
+ top:50;
+    position:absolute;
+   
+    width:7px
+  }
+
+  .marker {
+    background:#ED1C24;
+    height:2px;
+    right:0;
+    position:absolute;
+    top:35px;
+    width:7px
+     right:0;
+ left:0;
+}
+.pointer {
+    height:72px;
+    position:absolute;
+    top:82px;
+    width:72px;
+    border:1px solid red;
+    left:100px;
+     right:0;
+ left:0;
+ margin: 0 auto;
+}
+
+.drag {
+  left:0;right:0;margin:0 auto;top:-50px;
+   cursor: crosshair;
+}
+
+.drag-me {
+  left:0;right:0;margin:0 auto;top:-50px;position: absolute;    background-color: black;
+    width: 10px;
+    height: 10px;
+    cursor: crosshair;
+}
+
+.drag-line {
+      height: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-left: 1px dotted black;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    right: 0;
+    margin: 0 auto;
+}
+img {
+    width: 100%;
+    height: 100%;
+    max-height:inherit;
+}
+main {
+  padding-top: 180px;
+}
+
+.image {
+  position: absolute !important;
+   padding: 25px !important;
+    border: 1px solid transparent;
+}
+
+.image:nth-child(1) {
+  left:180px;
+  top:180px;
+}
+
+.image:nth-child(2) {
+  right:180px;
+  top:280px;
+
+}
+
+.border {
+  border: 1px solid black;
+}
+
+footer {
+ display: none;
+}
+
+::selection {
+  background: transparent;
+}
+
+
+
+#pane {
+  position: absolute;
+  width: auto;
+  height: auto;
+ /* top: 20%;
+  left: 20%;*/
+  margin: 0;
+  padding: 0;
+  z-index: 99;
+  border: 2px solid black;
+  background: transparent;
+}
+
+#title {
+  font-family: monospace;
+  background: purple;
+  color: white;
+  font-size: 24px;
+  height: 30px;
+  text-align: center;
+}
+
+#ghostpane {
+  background: #999;
+  opacity: 0.2;
+
+  width: 45%;
+  height: 45%;
+  top: 20%;
+  left: 20%;
+  
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 98;
+
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+#ghostpane {
+  opacity: 0 !important;
+}
+
+#simple_sketch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* cursor: url(https://cdn4.iconfinder.com/data/icons/48-bubbles/48/16.Pen-128.png),auto; */
+}
+
+
+</style>
+<canvas id="simple_sketch" width="800px" height="800px"></canvas>
+
+<!-- <div id="pane">
+  <div id="title">Resize, Drag or Snap Me!</div>
+</div> -->
+<!-- <div id="ghostpane"></div> -->
+
+<!-- <div class="pointer">
+    <div class="marker"></div>
+</div> -->
+    <!-- <div class="test">
+      <div class="test-handle">TEST</div>
+      TEST ME CONTENTTT
+    </div> -->
+		<section id="image-grid">
+		<!-- 	<a href="project.html">
+        <div class="image draggable" >
+          
+            <div class="hover">
+                    <div class="theOverlay">
+                      <div class="rotate">
+                        <span class="hoverCap">
+                          <h3>Personal</h3>
+                          <h2>Inez in the West</h2>
+                        </span>
+                        <img class="ui-widget-content" src="images/1.png" alt="">
+                      </div>
+                    </div>
+            </div>
+          
+        </div>
+      </a> -->
+			<!-- <div class="image draggable">
+				<div class="hover">
+          <div class="theOverlay">
+              <div class="rotate">
+      					<span class="hoverCap">
+      						<h3>Work</h3>
+      						<h2>Commercial Job</h2>
+      					</span>
+					     <img src="images/2.png" alt="">
+
+              </div>
+            </div>
+				</div>
+			</div> -->
+		<!-- 	<div class="image draggable">
+        <div class="handle">HANDLEME</div>
+				<img src="images/3.png" alt="">
+			</div> -->
+		
+        <div class="image draggable">
+              <div class="drag-me">drag</div>
+            <!--   <div class="drag-line"></div> -->
+          <img src="images/4.png" alt="">
+        </div>
+    
+			<div class="image draggable">
+         <div class="drag-me"></div>
+				<img src="images/5.png" alt="">
+			</div>
+		<!-- 	/*<div class="image draggable">
+				<img src="images/6.png" alt="">
+			</div>
+			<div class="image draggable">
+				<img src="images/7.png" alt="">
+			</div>*/ -->
+		</section>
+	</main>
+	<footer>
+		<h6>@ask-adeline</h6>
+	</footer>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="scripts/jquery-ui.js"></script>
+<script src="scripts/app.js"></script>
+ <script src="scripts/script.js"></script>
+<script>
+
+$('header').on('click',function(){
+  $('.menu').toggle();
+});
+
+	$( function() {
+	    // $( "img" ).draggable();
+      // $('.image').draggable({handle: 'img'});
+	     // // $( "img" ).resizable({
+	     // 	aspectRatio: 8 / 9
+	     // });
+	    
+	  } );
+
+  // $(document).ready(function() {
+  //       var params = {
+  //           // Callback fired on rotation start.
+  //           start: function(event, ui) {
+  //           },
+  //           // Callback fired during rotation.
+  //           rotate: function(event, ui) {
+  //           },
+  //           // Callback fired on rotation end.
+  //           stop: function(event, ui) {
+  //           },
+  //           // Set the rotation center at (25%, 75%).
+  //           rotationCenterX: 25.0, 
+  //           rotationCenterY: 75.0
+  //       };
+  //       $('.draggable').rotatable(params);
+  //   });
+
+
+// $( function() {
+//     $( ".image" ).resizable(
+//       {
+//         aspectRatio: true
+//       });
+//   } );
+
+$('.drag-me').on('mousedown',function(){
+  $(this).parent().addClass('border');
+  $('.drag').removeClass('drag');
+  $(this).addClass('drag');
+  drag();
+});
+  
+$('.image').on('click',function(){
+  $('#ghostpane').remove();
+  $('#pane').attr('id','');
+  $('.border').removeClass('border');
+  $(this).addClass('border');
+   $(this).attr('id','pane');
+   $(this).parent().after('<div id="ghostpane"></div>');
+   resize();
+
+
+});
+function drag() {
+var img = $('.drag');
+  var offset = img.offset();
+  function mouse(evt) {
+      var center_x = (offset.left) + (img.parent().width()/2);
+      var center_y = (offset.top) + (img.parent().height()/2);
+      var mouse_x = evt.pageX;
+      var mouse_y = evt.pageY;
+      var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+      var degree = (radians * (180 / Math.PI) * -1) - 180;
+      img.parent().css('-moz-transform', 'rotate(' + degree + 'deg)');
+      img.parent().css('-webkit-transform', 'rotate(' + degree + 'deg)');
+      img.parent().css('-o-transform', 'rotate(' + degree + 'deg)');
+      img.parent().css('-ms-transform', 'rotate(' + degree + 'deg)');
+  }
+  
+  img.mousedown(function(e) {
+      $(document).mousemove(mouse);
+  });
+  
+  $(document).mouseup(function() {
+      $(document).off("mousemove");
+  });
+
+}
+// $('.image').propeller({inertia: 0, speed: 0});
+function resize()  {
+  /*
+   * @author https://twitter.com/blurspline / https://github.com/zz85
+   * See post @ http://www.lab4games.net/zz85/blog/2014/11/15/resizing-moving-snapping-windows-with-js-css/
+   */
+
+  "use strict";
+
+  // Minimum resizable area
+  var minWidth = 60;
+  var minHeight = 40;
+
+  // Thresholds
+  var FULLSCREEN_MARGINS = -10;
+  var MARGINS = 4;
+
+  // End of what's configurable.
+  var clicked = null;
+  var onRightEdge, onBottomEdge, onLeftEdge, onTopEdge;
+
+  var rightScreenEdge, bottomScreenEdge;
+
+  var preSnapped;
+
+  var b, x, y;
+
+  var redraw = false;
+
+  var pane = document.getElementById('pane');
+  var ghostpane = document.getElementById('ghostpane');
+
+  function setBounds(element, x, y, w, h) {
+    element.style.left = x + 'px';
+    element.style.top = y + 'px';
+    element.style.width = w + 'px';
+    element.style.height = h + 'px';
+  }
+
+  function hintHide() {
+    setBounds(ghostpane, b.left, b.top, b.width, b.height);
+    ghostpane.style.opacity = 0;
+
+    // var b = ghostpane.getBoundingClientRect();
+    // ghostpane.style.top = b.top + b.height / 2;
+    // ghostpane.style.left = b.left + b.width / 2;
+    // ghostpane.style.width = 0;
+    // ghostpane.style.height = 0;
+  }
+
+
+  // Mouse events
+  pane.addEventListener('mousedown', onMouseDown);
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onUp);
+
+  // Touch events 
+  pane.addEventListener('touchstart', onTouchDown);
+  document.addEventListener('touchmove', onTouchMove);
+  document.addEventListener('touchend', onTouchEnd);
+
+
+  function onTouchDown(e) {
+    onDown(e.touches[0]);
+    e.preventDefault();
+  }
+
+  function onTouchMove(e) {
+    onMove(e.touches[0]);   
+  }
+
+  function onTouchEnd(e) {
+    if (e.touches.length ==0) onUp(e.changedTouches[0]);
+  }
+
+  function onMouseDown(e) {
+    onDown(e);
+    e.preventDefault();
+  }
+
+  function onDown(e) {
+    calc(e);
+
+    var isResizing = onRightEdge || onBottomEdge || onTopEdge || onLeftEdge;
+
+    clicked = {
+      x: x,
+      y: y,
+      cx: e.clientX,
+      cy: e.clientY,
+      w: b.width,
+      h: b.height,
+      isResizing: isResizing,
+      isMoving: !isResizing && canMove(),
+      onTopEdge: onTopEdge,
+      onLeftEdge: onLeftEdge,
+      onRightEdge: onRightEdge,
+      onBottomEdge: onBottomEdge
+    };
+  }
+
+  function canMove() {
+    return x > 0 && x < b.width && y > 0 && y < b.height
+    && y < 30;
+  }
+
+  function calc(e) {
+    b = pane.getBoundingClientRect();
+    x = e.clientX - b.left;
+    y = e.clientY - b.top;
+
+    onTopEdge = y < MARGINS;
+    onLeftEdge = x < MARGINS;
+    onRightEdge = x >= b.width - MARGINS;
+    onBottomEdge = y >= b.height - MARGINS;
+
+    rightScreenEdge = window.innerWidth - MARGINS;
+    bottomScreenEdge = window.innerHeight - MARGINS;
+  }
+
+  var e;
+
+  function onMove(ee) {
+    calc(ee);
+
+    e = ee;
+
+    redraw = true;
+
+  }
+
+  function animate() {
+
+    requestAnimationFrame(animate);
+
+    if (!redraw) return;
+
+    redraw = false;
+
+    if (clicked && clicked.isResizing) {
+
+      if (clicked.onRightEdge) pane.style.width = Math.max(x, minWidth) + 'px';
+      if (clicked.onBottomEdge) pane.style.height = Math.max(y, minHeight) + 'px';
+
+      if (clicked.onLeftEdge) {
+        var currentWidth = Math.max(clicked.cx - e.clientX  + clicked.w, minWidth);
+        if (currentWidth > minWidth) {
+          pane.style.width = currentWidth + 'px';
+          pane.style.left = e.clientX + 'px'; 
+        }
+      }
+
+      if (clicked.onTopEdge) {
+
+        var currentHeight = Math.max(clicked.cy - e.clientY  + clicked.h, minHeight);
+        if (currentHeight > minHeight) {
+          pane.style.height = currentHeight + 'px';
+          pane.style.top = e.clientY + 'px';  
+        }
+      }
+
+      hintHide();
+
+      return;
+    }
+
+    if (clicked && clicked.isMoving) {
+
+      if (b.top < FULLSCREEN_MARGINS || b.left < FULLSCREEN_MARGINS || b.right > window.innerWidth - FULLSCREEN_MARGINS || b.bottom > window.innerHeight - FULLSCREEN_MARGINS) {
+        // hintFull();
+        setBounds(ghostpane, 0, 0, window.innerWidth, window.innerHeight);
+        // ghostpane.style.opacity = 0.2;
+      } else if (b.top < MARGINS) {
+        // hintTop();
+        setBounds(ghostpane, 0, 0, window.innerWidth, window.innerHeight / 2);
+
+        // ghostpane.style.opacity = 0.2;
+      } else if (b.left < MARGINS) {
+        // hintLeft();
+        setBounds(ghostpane, 0, 0, window.innerWidth / 2, window.innerHeight);
+        // ghostpane.style.opacity = 0.2;
+      } else if (b.right > rightScreenEdge) {
+        // hintRight();
+        setBounds(ghostpane, window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
+        // ghostpane.style.opacity = 0.2;
+      } else if (b.bottom > bottomScreenEdge) {
+        // hintBottom();
+        setBounds(ghostpane, 0, window.innerHeight / 2, window.innerWidth, window.innerWidth / 2);
+        // ghostpane.style.opacity = 0.2;
+      } else {
+        hintHide();
+      }
+
+      if (preSnapped) {
+        setBounds(pane,
+          e.clientX - preSnapped.width / 2,
+          e.clientY - Math.min(clicked.y, preSnapped.height),
+          preSnapped.width,
+          preSnapped.height
+        );
+        return;
+      }
+
+      // moving
+      pane.style.top = (e.clientY - clicked.y) + 'px';
+      pane.style.left = (e.clientX - clicked.x) + 'px';
+
+      return;
+    }
+
+    // This code executes when mouse moves without clicking
+
+    // style cursor
+    if (onRightEdge && onBottomEdge || onLeftEdge && onTopEdge) {
+      pane.style.cursor = 'nwse-resize';
+    } else if (onRightEdge && onTopEdge || onBottomEdge && onLeftEdge) {
+      pane.style.cursor = 'nesw-resize';
+    } else if (onRightEdge || onLeftEdge) {
+      pane.style.cursor = 'ew-resize';
+    } else if (onBottomEdge || onTopEdge) {
+      pane.style.cursor = 'ns-resize';
+    } else if (canMove()) {
+      pane.style.cursor = 'move';
+    } else {
+      pane.style.cursor = 'default';
+    }
+  }
+
+  animate();
+
+  function onUp(e) {
+    calc(e);
+
+    if (clicked && clicked.isMoving) {
+      // Snap
+      var snapped = {
+        width: b.width,
+        height: b.height
+      };
+
+      if (b.top < FULLSCREEN_MARGINS || b.left < FULLSCREEN_MARGINS || b.right > window.innerWidth - FULLSCREEN_MARGINS || b.bottom > window.innerHeight - FULLSCREEN_MARGINS) {
+        // hintFull();
+        // setBounds(pane, 0, 0, window.innerWidth, window.innerHeight);
+
+        // preSnapped = snapped;
+      } else if (b.top < MARGINS) {
+        // hintTop();
+        // setBounds(pane, 10, 0, window.innerWidth, window.innerHeight / 2);
+
+        // preSnapped = snapped;
+      } else if (b.left < MARGINS) {
+        // // hintLeft();
+        // setBounds(pane, 0, 0, window.innerWidth / 2, window.innerHeight);
+        // // preSnapped = snapped;
+      } else if (b.right > rightScreenEdge) {
+        // hintRight();
+        // setBounds(pane, window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
+        // // preSnapped = snapped;
+      } else if (b.bottom > bottomScreenEdge) {
+        // hintBottom();
+        // setBounds(pane, 0, window.innerHeight / 2, window.innerWidth, window.innerWidth / 2);
+        // // preSnapped = snapped;
+      } else {
+        // preSnapped = null;
+      }
+
+      hintHide();
+
+    }
+
+    clicked = null;
+
+  }
+}
+
+  var __slice = Array.prototype.slice;
+(function(a) {
+    var b;
+    return a.fn.sketch = function() {
+        var c, d, e;
+        d = arguments[0], c = 2 <= arguments.length ? __slice.call(arguments, 1) : [], this.length > 1 && a.error("Sketch.js can only be called on one element at a time."), e = this.data("sketch");
+        if (typeof d != "string" || !e) return e ? e : (this.data("sketch", new b(this.get(0), d)), this);
+        if (!e[d]) return a.error("Sketch.js did not recognize the given command.");
+        if (typeof e[d] == "function") return e[d].apply(e, c);
+        if (c.length === 0) return e[d];
+        if (c.length === 1) return e[d] = c[0]
+    }, b = function() {
+        function b(b, c) {
+
+            this.el = b, this.canvas = a(b), this.context = b.getContext("2d"), this.options = a.extend({
+                toolLinks: !0,
+                defaultTool: "marker",
+                defaultColor: "#000000",
+                defaultSize: 2
+            }, c), this.painting = !1, this.color = this.options.defaultColor, this.size = this.options.defaultSize, this.tool = this.options.defaultTool, this.actions = [], this.action = [], this.canvas.bind("click mousedown mouseup mousemove mouseleave mouseout touchstart touchmove touchend touchcancel", this.onEvent), this.options.toolLinks && a("body").delegate('a[href="#' + this.canvas.attr("id") + '"]', "click", function(b) {
+                var c, d, e, f, g, h, i;
+                d = a(this), c = a(d.attr("href")), f = c.data("sketch"), i = ["color", "size", "tool"];
+                for (g = 0, h = i.length; g < h; g++) e = i[g], d.attr("data-" + e) && f.set(e, a(this).attr("data-" + e));
+                return a(this).attr("data-download") && f.download(a(this).attr("data-download")), !1
+            })
+        }
+        return b.prototype.download = function(a) {
+            var b;
+            return a || (a = "png"), a === "jpg" && (a = "jpeg"), b = "image/" + a, window.open(this.el.toDataURL(b))
+        }, b.prototype.set = function(a, b) {
+            return this[a] = b, this.canvas.trigger("sketch.change" + a, b)
+        }, b.prototype.startPainting = function() {
+         
+            return this.painting = !0, this.action = {
+                tool: this.tool,
+                color: this.color,
+                size: parseFloat(this.size),
+                events: []
+            }
+        }, b.prototype.stopPainting = function() {
+            return this.action && this.actions.push(this.action), this.painting = !1, this.action = null, this.redraw()
+        }, b.prototype.onEvent = function(b) {
+            return b.originalEvent && b.originalEvent.targetTouches && (b.pageX = b.originalEvent.targetTouches[0].pageX, b.pageY = b.originalEvent.targetTouches[0].pageY), a.sketch.tools[a(this).data("sketch").tool].onEvent.call(a(this).data("sketch"), b), b.preventDefault(), !1
+        }, b.prototype.redraw = function() {
+            var b;
+            this.el.width = this.canvas.width(), this.context = this.el.getContext("2d"), b = this, a.each(this.actions, function() {
+                if (this.tool) return a.sketch.tools[this.tool].draw.call(b, this)
+            });
+            if (this.painting && this.action) return a.sketch.tools[this.action.tool].draw.call(b, this.action)
+        }, b
+    }(), a.sketch = {
+        tools: {}
+    }, a.sketch.tools.marker = {
+        onEvent: function(a) {
+            switch (a.type) {
+                case "mousedown":
+                case "touchstart":
+                    this.startPainting();
+                    break;
+                case "mouseup":
+                case "mouseout":
+                case "mouseleave":
+                case "touchend":
+                case "touchcancel":
+                    this.stopPainting()
+            }
+            if (this.painting) return this.action.events.push({
+                x: a.pageX - this.canvas.offset().left,
+                y: a.pageY - this.canvas.offset().top,
+                event: a.type
+            }), this.redraw()
+        },
+        draw: function(a) {
+            var b, c, d, e, f;
+            this.context.lineJoin = "round", this.context.lineCap = "round", this.context.beginPath(), this.context.moveTo(a.events[0].x, a.events[0].y), f = a.events;
+            for (d = 0, e = f.length; d < e; d++) b = f[d], this.context.lineTo(b.x, b.y), c = b;
+            return this.context.strokeStyle = a.color, this.context.lineWidth = a.size, this.context.stroke()
+        }
+    }, a.sketch.tools.eraser = {
+        onEvent: function(b) {
+            return a.sketch.tools.marker.onEvent.call(this, b)
+        },
+        draw: function(b) {
+            var c;
+            return c = this.context.globalCompositeOperation, this.context.globalCompositeOperation = "copy", b.color = "rgba(0,0,0,0)", a.sketch.tools.marker.draw.call(this, b), this.context.globalCompositeOperation = c
+        }
+    }
+})(jQuery)
+  
+  // $(function() {
+  //   $('#simple_sketch').sketch();
+  // });
+
+
+
+</script>
+</html>

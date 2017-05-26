@@ -1,0 +1,157 @@
+ <!--{% comment %}
+          Calculate the number of footer columns shown
+        {% endcomment %}
+        {% assign num_footer_columns = 0 %}
+        {% unless settings.footer_mainlinks == blank or settings.footer_mainlinks.empty? %}
+          {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+        {% endunless %}
+        {% unless settings.footer_content == blank or settings.footer_content.empty? %}
+          {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+        {% endunless %}
+        {% if settings.footer_newsletter_enable %}
+          {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+        {% endif %}
+
+        {% case num_footer_columns %}
+          {% when 0 %}
+          {% when 1 %}
+            {% assign footer_column_width = 'large--one-half push--large--one-quarter' %}
+          {% when 2 %}
+            {% assign footer_column_width = 'large--one-half' %}
+          {% when 3 %}
+            {% assign footer_column_width = 'large--one-third' %}
+        {% endcase %}
+
+        {% unless settings.footer_mainlinks == blank or settings.footer_mainlinks.empty? %}
+          <div class="grid__item {{ footer_column_width }}">
+            <h5 class="uppercase">{{ linklists[settings.footer_mainlinks].title }} </h5>
+            <hr class="hr--underline">
+            <ul class="footer-quicklinks">
+              {% for link in linklists[settings.footer_mainlinks].links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endunless %}
+
+        {% unless settings.footer_content == blank or settings.footer_content.empty? %}
+        {% assign page = pages[settings.footer_content] %}
+          <div class="grid__item {{ footer_column_width }}">
+            <h5 class="uppercase">{{ page.title }}</h5>
+            
+            <div class="rte">{{ page.content }}</div>
+          </div>
+        {% endunless %}
+
+        {% if settings.footer_newsletter_enable %}
+          <div class="grid__item {{ footer_column_width }}">
+            <h5 class="uppercase">{{ 'layout.footer.newsletter_title' | t }}</h5>
+            <hr class="hrunderline">
+            <p>{{ settings.footer_newsletter_text }}</p>
+            {% include 'newsletter-form' %}
+          </div>
+        {% endif %}
+      </div>
+-->
+      <!-- <div class="grid footer-secondary-wrapper">
+        <ul class="footer-secondary grid__item inline-list">
+            <li><a href="/">&copy; {{ shop.name }} {{ 'now' | date: "%Y" }}</a></li>
+          {% for link in linklists[settings.footer_secondary_linklist].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+            <li>{{ powered_by_link }}</li>
+            <li><a href="http://corknine.com">{{ 'layout.footer.credit' | t }}</a></li>
+        </ul>
+
+        {% if settings.footer_payment_enable %}
+          {% unless shop.enabled_payment_types == empty %}
+          <ul class="footer-payment payment-icons grid__item inline-list">
+            {% for type in shop.enabled_payment_types %}
+              <li>
+                <span class="icon-fallback-text">
+                  <span class="icon icon-{{type}}" aria-hidden="true"></span>
+                  <span class="fallback-text">{{type | replace: '_',' '}}</span>
+                </span>
+              </li>
+            {% endfor %}
+          </ul>
+          {% endunless %}
+        {% endif %}
+
+        {% if settings.footer_social_enable %}
+        <ul class="footer-social social-icons grid__item inline-list">
+          {% if settings.social_twitter_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter" target="_blank">
+                <span class="icon icon-twitter" aria-hidden="true"></span>
+                <span class="fallback-text">Twitter</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_facebook_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook" target="_blank">
+                <span class="icon icon-facebook" aria-hidden="true"></span>
+                <span class="fallback-text">Facebook</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_instagram_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_instagram_link }}" title="{{ shop.name }} on Instagram" target="_blank">
+                <span class="icon icon-instagram" aria-hidden="true"></span>
+                <span class="fallback-text">Instagram</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_pinterest_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_pinterest_link }}" title="{{ shop.name }} on Pinterest" target="_blank">
+                <span class="icon icon-pinterest" aria-hidden="true"></span>
+                <span class="fallback-text">Pinterest</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_google_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_google_link }}" title="{{ shop.name }} on Google Plus" target="_blank">
+                <span class="icon icon-google-plus" aria-hidden="true"></span>
+                <span class="fallback-text">Google Plus</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_youtube_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_youtube_link }}" title="{{ shop.name }} on Youtube" target="_blank">
+                <span class="icon icon-youtube" aria-hidden="true"></span>
+                <span class="fallback-text">Youtube</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_vimeo_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_vimeo_link }}" title="{{ shop.name }} on Vimeo" target="_blank">
+                <span class="icon icon-vimeo" aria-hidden="true"></span>
+                <span class="fallback-text">Vimeo</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_tumblr_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_tumblr_link }}" title="{{ shop.name }} on Tumblr" target="_blank">
+                <span class="icon icon-tumblr" aria-hidden="true"></span>
+                <span class="fallback-text">Tumblr</span>
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.social_fancy_link != blank %}
+            <li>
+              <a class="icon-fallback-text" href="{{ settings.social_fancy_link }}" title="{{ shop.name }} on Fancy" target="_blank">
+                <span class="icon icon-fancy" aria-hidden="true"></span>
+                <span class="fallback-text">Fancy</span>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+        {% endif %}
+      </div> -->

@@ -1,0 +1,73 @@
+@charset "iso-8859-1";
+a {vertical-align:bottom;}
+a:link {text-decoration: none; color: #000000;}
+a:hover {text-decoration: none; color: #000000;}
+a:active {text-decoration: none;color:#000000;}
+a:visited {text-decoration: none;color:#000000;}
+
+
+html, body {
+    height: 100%;
+	width: 100%;
+}
+
+body {
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	padding-top: 80px;
+	font-family: arial;
+	font-size: 10px;
+	text-transform:uppercase;
+	letter-spacing: 2px;
+	}
+	
+#vid {
+	background-color:#000000;
+	width: 100%;
+	text-align: center;
+	margin:0 auto;
+	height: 480px;
+}
+
+
+#box {
+	margin: 0 auto;
+	min-height: 100%;
+	text-align: center;
+	}
+	
+#tour-links {
+	color: #FFF;
+	letter-spacing: 2px;
+	line-height: 31px;
+	}
+
+#tour {
+width: 100%;
+position: relative;
+top:50px;
+margin: 0 auto;
+background:#000000 url('imgs/zkend.jpg') top no-repeat fixed;
+min-height: 730px;
+}
+	
+#zk {
+	background: url(imgs/zebrakatz.png) no-repeat center;
+	display: block;
+	height:87px;
+	}
+	
+
+#othervids {
+	margin: 0 auto;
+	width: 940px;
+	height: 250px;
+	padding-top: 40px;
+	padding-bottom: 60px;
+		}
+
+.videos {
+	width: 300px;
+	height:200px;
+	padding-right:50px;
+}

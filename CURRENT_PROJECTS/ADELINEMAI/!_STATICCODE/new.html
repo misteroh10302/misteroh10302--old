@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adeline Mai</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<style>
+	img {
+  max-width: 100%
+}
+
+.container {
+  width: 100%;
+  height: 800px;
+  position: relative;
+  outline: 1px solid blue;
+  margin-top: 20px;
+}
+
+.thumb {
+	max-width: inherit;
+	margin: 0;
+	padding: 0;
+}
+.container canvas,
+.container .trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.container canvas {
+/*  outline: 1px solid pink;*/
+  z-index: 15;
+  pointer-events: none;
+}
+
+.container .trigger {
+  z-index: 5;
+}
+
+.container .thumbs {
+  position: relative;
+  z-index: 10;
+}
+
+.thumb {
+  max-width: initial;
+  position: absolute;
+  cursor: pointer;
+
+  width: 350px;
+}
+
+
+.thumb img {
+	padding:30px;
+}
+.thumb:hover {
+/*  outline: 1px solid red;*/
+}
+
+.thumb:nth-of-type(1) {
+  top: 20px;
+}
+
+.thumb:nth-of-type(2) {
+  top: 280px;
+  left: 60px
+}
+
+.border {
+	border: 1px dotted red;
+	z-index: 20;
+}
+.drag-me {
+  left:0;right:0;margin:0 auto;top:-50px;position: absolute;    background-color: red;
+    width: 10px;
+    height: 10px;
+    cursor: crosshair;
+    display: none;
+}
+
+::selection {
+	background-color: transparent;
+	}
+
+
+#pane {
+	position: absolute;
+/*	width: 45%;
+	height: 45%;
+	top: 20%;
+	left: 20%;
+
+	*/
+	margin: 0;
+	padding: 0;
+	z-index: 99;
+/*	border: 2px solid purple;
+	background: #fefefe;*/
+}
+
+#title {
+	font-family: monospace;
+	background: purple;
+	color: white;
+	font-size: 24px;
+	height: 30px;
+	text-align: center;
+}
+
+#ghostpane {
+	background: #999;
+	opacity: 0.2;
+
+	width: 45%;
+	height: 45%;
+	top: 20%;
+	left: 20%;
+	
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	z-index: 98;
+
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+	display: none;
+}
+
+img {
+	max-height: none;
+}
+
+.left-top,.left-bottom,.right-top,.right-bottom {
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	position: absolute;
+}
+
+
+.left-top {
+	    top: -5px;
+    left: -5px;
+}
+.left-bottom {
+	    bottom: -5px;
+    left: -5px;
+}
+
+.right-top {
+	   top: -5px;
+    right: -5px;
+}
+
+.right-bottom {
+	   bottom: -5px;
+    right: -5px;
+}
+
+.thumb:nth-of-type(2) {
+  top: 480px;
+  left: 60px;
+    width: 360px;
+}
+
+.thumb:nth-of-type(3) {
+  top: 280px;
+  right: 60px;
+    width: 200px;
+}
+
+.thumb:nth-of-type(4) {
+  top: 680px;
+  right: 60px;  width: 500px;
+}
+
+.test-resize {
+  width: 450px;
+  margin-left: 100px;
+  position: relative;
+}
+
+.left-top{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 10px;
+  height: 10px;
+  background-color: black;  
+}
+.right-top{
+  position: absolute;
+  top:0;
+  right:0;
+  width: 10px;
+  height: 10px;
+  background-color: black;  
+}
+.left-bottom{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 10px;
+  height: 10px;
+  background-color: black;  
+}
+.right-bottom{
+  position: absolute;
+  bottom:0;
+  right:0;
+  width: 10px;
+  height: 10px;
+  background-color: black;  
+}
+
+</style>
+<body>
+
+  <div class="test-resize">
+    <div class="left-top"></div>
+    <div class="right-top"></div>
+    <div class="left-bottom"></div>
+    <div class="right-bottom"></div>
+
+      <img src="http://adeline.madeline-omoore.com/wp-content/uploads/2017/02/IMG_9459_C_HD_RVB-1.jpg"/>
+  </div>
+
+<!-- <div id="pane">
+	<div id="title">Resize, Drag or Snap Me!</div>
+</div> -->
+<div id="ghostpane"></div>
+	   <div class="container" id="container">
+      <div class="trigger" id="trigger"></div>
+      <canvas id="canvas"></canvas>
+      <div class="thumbs" id="thumbs">
+        <div class="thumb">
+        	<!-- <div class="left-top"></div>
+        	<div class="right-top"></div>
+        	<div class="right-bottom"></div>
+        	<div class="left-bottom"></div> -->
+        	<div class="drag-me"></div>
+        	<img src="http://adeline.madeline-omoore.com/wp-content/uploads/2017/02/IMG_9459_C_HD_RVB-1.jpg"/>
+        </div>
+        <div class="thumb">
+        		<div class="drag-me"></div>
+        	<img src="http://adeline.madeline-omoore.com/wp-content/uploads/2017/02/thumb-4.jpg"/>
+        </div>
+        <div class="thumb">
+            <div class="drag-me"></div>
+          <img src="http://adeline.madeline-omoore.com/wp-content/uploads/2017/02/thumb-4.jpg"/>
+        </div>
+        <div class="thumb">
+            <div class="drag-me"></div>
+          <img src="http://adeline.madeline-omoore.com/wp-content/uploads/2017/02/thumb-4.jpg"/>
+        </div>
+      </div>
+    </div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="scripts/jquery-ui.js"></script>
+<script src="scripts/resize.js"></script>
+<script>
+
+var isResizing = false,
+    lastDownX = 0;
+
+function resizeMe() {
+    var container = $('.test-resize'),
+        img = $('.test-resize img'),
+        leftTopHandle = $('.left-top'),
+        rightTopHandle = $('.right-top'),
+        rightBottomHandle = $('.left-bottom'),
+        leftBottomHandle = $('.right-bottom');
+
+    leftTopHandle.on('mousedown', function (e) {
+        isResizing = true;
+        lastDownX = e.clientX;
+    });
+
+
+    rightTopHandle.on('mousedown', function (e) {
+        isResizing = true;
+        lastDownX = e.clientX;
+    });
+
+
+    rightBottomHandle.on('mousedown', function (e) {
+        isResizing = true;
+        lastDownX = e.clientX;
+    });
+
+     leftBottomHandle.on('mousedown', function (e) {
+        isResizing = true;
+        lastDownX = e.clientX;
+    });
+
+    $(document).on('mousemove', function (e) {
+        // we don't want to do anything if we aren't resizing.
+        if (!isResizing) 
+            return;
+
+          if (leftTopHandle) {
+             var offsetRight = container.width() - (e.clientX - container.offset().left);
+          }
+           if (rightTopHandle) {
+            console.log(e.clientX);
+             var offsetRight = container.width() - ( e.clientX - container.offset().left);
+          }
+        
+       
+       
+        img.css('width', offsetRight);
+    }).on('mouseup', function (e) {
+        // stop resizing
+        isResizing = false;
+    });
+}
+
+
+resizeMe();
+function doDraw() {
+  var container = document.getElementById('container')
+  var canvas = document.getElementById('canvas');
+  var thumbs = document.getElementById('thumbs');
+  var trigger = document.getElementById('trigger');
+  var ctx = canvas.getContext("2d");
+  var w, h;
+  var currX, currY, prevX, prevY;
+  var drawing = false;
+  
+  function calculate() {
+    w = container.offsetWidth;
+    h = container.offsetHeight;
+    
+    canvas.setAttribute('width', w);
+    canvas.setAttribute('height', h);
+    console.log(w, h);
+  }
+
+  
+  function getCoordinates(e) {
+    prevX = currX;
+    console.log(currX);
+    prevY = currY;
+    currX = e.clientX - container.offsetLeft + 10;
+    currY = e.clientY - container.offsetTop + 20;
+  }
+    
+  function draw() {
+//     console.log(prevY, currY, w, h);
+    ctx.beginPath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currX, currY);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+  } 
+
+  calculate();
+  window.addEventListener('resize', calculate);
+
+  
+  trigger.addEventListener('mousedown', function (e) {
+  	$('.border').removeClass('border');
+  		$('.drag-me').hide();
+    getCoordinates(e);
+    thumbs.style.pointerEvents = 'none';
+    drawing = true;
+  })
+  
+  trigger.addEventListener('mousemove', function (e) {
+    if (drawing) {
+      getCoordinates(e);
+      draw(); 
+    }
+  });  
+    
+  trigger.addEventListener('mouseup', function (e) {
+    thumbs.style.pointerEvents = 'initial';
+    drawing = false;
+  });
+}
+
+document.onreadystatechange = function () {
+
+    // check the value - if it's 'interactive' then the DOM has loaded
+    if (document.readyState === "interactive") {
+        doDraw();
+    }
+}
+
+// $('.thumb').draggable();
+$('.thumb').on('click',function(){
+	$('#pane').attr('id','');
+	$('.drag-me').hide();
+	$('.border').removeClass('border');
+	$(this).find('img').addClass('border');
+	// $(this).css('z-index','30');
+	// $(this).draggable("enable");
+	$(this).find('.drag-me').show();
+	$(this).attr('id','pane');
+	resize();
+});
+
+$('.drag-me').on('mousedown',function(){
+$(this).parent().attr('id','');
+  $(this).parent().find('img').addClass('border');
+  $('.drag').removeClass('drag');
+  $(this).addClass('drag');
+  drag();
+  // $(this).parent().draggable('disable');
+});
+
+function drag() {
+var img = $('.drag');
+  var offset = img.offset();
+  function mouse(evt) {
+      var center_x = (offset.left) + (img.siblings().width()/2);
+      var center_y = (offset.top) + (img.siblings().height()/2);
+      var mouse_x = evt.pageX;
+      var mouse_y = evt.pageY;
+      var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+      var degree = (radians * (180 / Math.PI) * -1) - 180;
+      img.parent().css('-moz-transform', 'rotate(' + degree + 'deg)');
+      img.parent().css('-webkit-transform', 'rotate(' + degree + 'deg)');
+      img.parent().css('-o-transform', 'rotate(' + degree + 'deg)');
+      img.parent().css('-ms-transform', 'rotate(' + degree + 'deg)');
+  }
+  
+  img.mousedown(function(e) {
+      $(document).mousemove(mouse);
+  });
+  
+  $(document).mouseup(function() {
+      $(document).off("mousemove");
+  });
+
+}
+
+</script>
+</html>

@@ -1,0 +1,22 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	font-size: 14px;
+	line-height: $font__line-height-body;
+	-webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+@import "headings";
+
+@import "copy";

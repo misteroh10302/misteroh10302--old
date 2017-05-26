@@ -1,0 +1,208 @@
+* {margin:0; padding:0;  box-sizing: border-box;}
+body {
+	font-family: Nimbus Mono L OT;
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color:black;
+}
+header {
+	position: fixed;
+	bottom:0;
+	height: 50px;
+	background-color: white;
+	width: 100vw;
+	padding: 20px 30px;
+	font-size: 9px;
+	z-index: 90000;
+	text-align: center;
+	    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand {
+	display: inline-block;
+	float:left;
+	cursor: pointer;
+}
+
+nav {
+	display: inline-block;
+    position: absolute;
+    width: 350px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+nav ul {
+	margin: 0 auto;
+	width: 350px;
+	text-align: center;
+}
+nav li {
+	display: inline-block;
+	padding: 0px 15px;
+	cursor: pointer;
+}
+
+.contact {
+	float:right;
+	cursor: pointer;
+	display: inline-block;
+}
+#allimages {
+	margin:30px 30px;
+}
+#allimages img {
+	max-width: 550px;
+	margin: 0px 0px 30px;
+	transition: 0.25s;
+	transition-timing-function: ease-in;
+	position: relative;
+
+}
+#allimages div:nth-child(1) img{
+	max-width: 20%;
+}
+
+#allimages div:nth-child(2n) {
+	text-align: right;
+
+}
+
+#allimages div:nth-child(2n) img{
+	max-width: 70%;
+	
+}
+
+#allimages div:nth-child(3n) img{
+	width: 60%;
+	
+}
+
+#allimages div:nth-child(4) img{
+	width: 30%;
+	
+}
+#allimages img:hover {
+	-webkit-filter: contrast(1.15);
+  filter: contrast(1.15);
+	transition: 0.25s;
+	transition-timing-function: ease-in;
+}
+.title {
+	transform: rotate(270deg);
+    position: relative;
+    display: inline-block;
+    top: -86px;
+    left: -60px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#gallery img {
+	    height: calc(100vh - 50px);
+	    margin: 0 auto;
+	    padding: 15px;
+}
+
+#gallery .title {
+	display: none;
+}
+
+
+#gallery div {
+	text-align: center;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+
+}
+
+
+.w3-display-left {
+		    position: absolute;
+    left: 0;
+    z-index: 9000000;
+    width: 50vw;
+      height: calc(100vh - 50px);
+      cursor: '/Madelne';
+}
+
+
+.w3-display-right {
+	    position: absolute;
+    right: 0;
+    z-index: 9000000;
+  width: 50vw;
+      height: calc(100vh - 50px);
+}
+
+.mobile {
+	display: none;
+}
+
+.mySlides {
+	position: relative;
+	transition: 6s;
+	transition-timing-function: ease-in;
+}
+
+@media screen and (max-width: 768px) {
+
+
+	.mobile {
+		display: block;
+	}
+	#gallery img {
+    	width: 100vw;
+	    margin: 0 auto;
+	    padding: 15px;
+	    height: auto;
+	}
+		#allimages img {
+	    max-width: 100%;
+	    margin: 0px 0px 30px;
+	    transition: 0.5s;
+	    transition-timing-function: ease-in;
+	}
+
+		#allimages div:nth-child(1) img {
+	    max-width: 50%;
+	}
+
+	nav {
+		position: initial;
+	}
+
+	nav ul {
+	    margin: 0 auto;
+	    padding: 20px 0px;
+	     width: 100%; 
+	    text-align: center;
+	}
+
+	header {
+		height: auto;
+	}
+	#gallery div {
+	text-align: center;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	transform: translateY(-50%);
+    top: 45%;
+}
+
+	.contact,.brand {
+	    text-align: center;
+	    width: 100%;
+	}
+}
+
+
+

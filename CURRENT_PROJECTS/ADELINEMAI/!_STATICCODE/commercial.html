@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adeline Mai</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	.ui-rotatable-handle {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background-color: black ;
+    background-size: 100%;
+    left: 2px;
+    bottom: 2px;
+    position: absolute;
+    top:-50px;
+    right:0;
+    left:0;
+    margin: 0 auto;
+}
+#elementResizable {
+    border: 1px solid #000000;
+    width: 300px;
+    height: 40px;
+    overflow: visible;
+    position:relative;
+
+}
+#content {
+    position:absolute;
+    top:0;left:0;bottom:0;right:0;
+    background:#CCC;
+    overflow:hidden;
+    background-image: url(images/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#nwgrip, #negrip, #swgrip, #segrip, #ngrip, #egrip, #sgrip, #wgrip {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+
+#negrip {
+    top:-6px; right:-6px;
+}
+#segrip {
+    bottom:-6px; right:-6px;
+}
+#nwgrip {
+    top:-6px; left:-6px;
+}
+#swgrip {
+    bottom:-6px; left:-6px;
+}
+#ngrip {
+    top:-6px; 
+    left:50%; margin-left:-6px;
+}
+#egrip {
+    right:-6px; 
+    top:50%; margin-top:-6px;
+}
+#sgrip {
+    bottom:-6px; 
+    left:50%; margin-left:-6px;
+}
+#wgrip {
+    left:-6px; 
+    top:50%; margin-top:-6px;
+}
+.ui-resizable-handle {
+    opacity: 0;
+}
+.ui-resizable-n {
+    cursor: n-resize;
+    height: 10px;
+    width: 10px;
+    top: -5px;
+    left: 0;
+    background-color: red;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+     height: 10px;
+    width: 10px;
+ 
+    height: 10px;
+     background-color: red;
+}
+
+.ui-resizable-s {
+    cursor: e-resize;
+     height: 10px;
+    width: 10px;
+    height: 10px;
+     background-color: red;
+}
+
+.ui-resizable-w {
+    cursor: e-resize;
+     height: 10px;
+    width: 10px;
+
+ right:0;
+  height: 10px;
+     background-color: red;
+         left: inherit;
+         top:     0;
+          bottom:0;
+
+}
+
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+      background-color: rgba(0, 0, 0, 0.66);
+  top:0;
+  z-index: 2;
+  display: none;
+  color:white;
+  transition:  0.15s ease-in-out;
+}
+
+.menu div {
+  position: relative;
+  transform: translateY(-40%);
+  top:40%;
+  padding-bottom: 90px;
+}
+
+.menu a {
+  display: block;
+  color:white;
+}
+
+header  div {
+  margin-left: 30px;
+  font-size: 10px;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  letter-spacing: 0.1em;
+}
+
+.image {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.image div{
+  float: left;
+  width: 50%;
+}
+.hoverCap {
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    display: block;
+    opacity: 1;
+    left: 0;
+    right: 0;
+    line-height: 1em;
+}
+</style>
+</head>
+<body>
+	<nav>
+		<h1>
+			<a href="#">Adeline Mai</a>
+		</h1>
+	</nav>
+
+    <header>
+        <span>
+            
+        </span>
+
+        <div>
+          commercial
+        </div>
+    </header>
+
+  <section class="menu">
+  
+      <div>
+        <h1>Adeline Mai </h1>
+        <h2>Is a photographer form LA</h2>
+      </div>
+      <div>
+        <a href="">
+          <h2>Work</h2>
+        </a>
+        <a href="">
+          <h2>Commercial</h2>
+        </a>
+        <a href="">
+          <h2>Personal</h2>
+        </a>
+      </div>
+  
+  </section>
+
+	<main>
+		<section id="image-grid">
+			<a href="project.html">
+        <div class="image draggable" >
+          
+                        
+                        <div>
+                          <img class="ui-widget-content" src="images/1.png" alt="">
+                        </div>
+                        <div class="hoverCap">
+                          <h3>Personal</h3>
+                          <h2>Inez in the West</h2>
+                        </div>
+                   
+          
+        </div>
+      </a>
+			<div class="image draggable">
+				<div class="hover">
+          <div class="theOverlay">
+              <div class="rotate">
+      					<span class="hoverCap">
+      						<h3>Work</h3>
+      						<h2>Commercial Job</h2>
+      					</span>
+					     <img src="images/2.png" alt="">
+
+              </div>
+            </div>
+				</div>
+			</div>
+			<div class="image draggable">
+				<img src="images/3.png" alt="">
+			</div>
+			<div class="image draggable">
+				<img src="images/4.png" alt="">
+			</div>
+			<div class="image draggable">
+				<img src="images/5.png" alt="">
+			</div>
+			<div class="image draggable">
+				<img src="images/6.png" alt="">
+			</div>
+			<div class="image draggable">
+				<img src="images/7.png" alt="">
+			</div>
+		</section>
+	</main>
+	<footer>
+		<h6>@ask-adeline</h6>
+	</footer>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+<script src="scripts/app.js"></script>
+
+<script>
+
+$('header').on('click',function(){
+  $('.menu').toggle();
+});
+
+
+
+
+</script>
+</html>

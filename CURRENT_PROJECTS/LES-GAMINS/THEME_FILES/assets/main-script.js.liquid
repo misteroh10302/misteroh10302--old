@@ -1,0 +1,497 @@
+
+$('#chimp').submit(function(e) {
+  var $this = $(this);
+  $.ajax({
+      type: "GET", // GET & url for json slightly different
+      url: "https://les-gamins.us15.list-manage.com/subscribe/post-json?u=28d274f7e98f4e8b54ec43780&amp;id=aa1abf2236&c=?",
+      data: $this.serialize(),
+      dataType    : 'json',
+      contentType: "application/json; charset=utf-8",
+      error       : function(err) { alert("Could not connect to the registration server."); },
+      success     : function(data) {
+          if (data.result != "success") {
+            var theMSG = data.msg;
+            if (theMSG.search('already subscribed')) {
+              $('#chimp em').html('Oops! This email address has already been registered.');
+              $('#chimp em').css('display','block');
+            }
+
+          } else {
+              $('#chimp em').html('Thank you for signing up!');
+              $('#chimp em').css('display','block');
+          }
+      }
+  });
+  return false;
+});
+
+
+$('#chimp-mail').submit(function(e) {
+  var $this = $(this);
+  $.ajax({
+      type: "GET", // GET & url for json slightly different
+      url: "https://les-gamins.us15.list-manage.com/subscribe/post-json?u=28d274f7e98f4e8b54ec43780&amp;id=aa1abf2236&c=?",
+      data: $this.serialize(),
+      dataType    : 'json',
+      contentType: "application/json; charset=utf-8",
+      error       : function(err) { alert("Could not connect to the registration server."); },
+      success     : function(data) {
+          if (data.result != "success") {
+              var theMSG = data.msg;
+            if (theMSG.search('already subscribed')) {
+              $('#email-signup em').addClass('error');
+              $('#email-signup em').html('Oops! This email address has already been registered.');
+              $('#email-signup em').css('display','block');
+            }
+
+          } else {
+            $('#email-signup em').removeClass('error');
+             $('#email-signup em').html('Thank you for signing up!');
+              $('#email-signup em').css('display','block');
+              $('#chimp-mail').css('display','none');
+          }
+      }
+  });
+  return false;
+});
+
+
+
+
+
+$('.nav-link').each(function(){
+   if( $(this)[0].text === "Sale") {
+      $(this).css('color','#F9BE00');
+    }
+});
+
+var maxHeight = 0;
+$('.main-menu-dropdown').each(function(){
+   maxHeight = $(this).height() > maxHeight ? $(this).height() : maxHeight;
+   $('#desktopfake').css('height',maxHeight + 30);
+});
+$('.main-menu .parent').hover(function(){
+  var theHeight = $(this).find('.main-menu-dropdown').height();
+  console.log(theHeight);
+  $('#desktopfake').css('height',theHeight + 30);
+  $('#desktopfake').toggle();
+});
+
+// , .main-menu-dropdown, .main-menu-dropdown, .dropdown-top, .main-menu-dropdown li, .main-menu-dropdown::before'
+
+var windowHeight = $(document).height();
+    // $("#bagsForTots").css('height',windowHeight );
+$('#nav-right .cart-text-link .cart').on('click',function(e){
+   $('.ajaxcart__overlay').css({'visibility':'visible','opacity':'0.7'});
+});
+
+
+$('#tots-click').on('click',function(e){
+    e.preventDefault();
+    $('.bags-for-tots').toggle().css('visibility','visible').hide().fadeIn('slow');
+    $('.bags-for-tots').addClass('open-tots');
+    $('#bagsForTots').css('visibility','visible').hide().fadeIn('slow');
+    $('.ajaxcart__overlay').css({'visibility':'visible','opacity':'0.7'});
+
+});
+
+$('#bagsForTots').on('click',function(e){
+if (e.target !== this) {
+  return;
+} else {
+  if ($('.bags-for-tots').hasClass('open-tots')) {
+     $('.bags-for-tots').toggle().css('visibility','hidden').fadeOut('slow');
+     $('#bagsForTots').css('visibility','hidden').hide().fadeOut('slow');
+     $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+     $('.bags-for-tots').removeClass('open-tots');
+  }
+}
+
+
+});
+$('#donation-button').on('click',function(){
+
+    $('.bags-for-tots').toggle().css('visibility','visible').hide().fadeIn('slow');
+     $('#bagsForTots').css('visibility','visible').hide().fadeIn('slow');
+     $('.bags-for-tots').removeClass('open-tots');
+});
+
+
+
+$('#tots-close').on('click',function(e){
+     $('.bags-for-tots').toggle().css('visibility','hidden').fadeOut('slow');
+     $('#bagsForTots').css('visibility','hidden').hide().fadeOut('slow');
+     $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+     $('.bags-for-tots').removeClass('open-tots');
+});
+
+// Referal Program Popup - Open and close
+$('#refferal').on('click',function(){
+  $('.ref-program').css({'margin-left': - ($('.ref-program').width() /2 )});
+    $('#refferral-program').css('display','block');
+    $('.ajaxcart__overlay').css({'visibility':'visible','opacity':'0.7'});
+    $('.ajaxcart__overlay').on('click',function(){
+         $('#refferral-program').fadeOut('slow');
+         $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+    });
+});
+// Referal Program close on click close button
+function refClose(){
+      $('#refferral-program').fadeOut('fast');
+      $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+}
+
+// Open the notifyMe popup for the individual product page
+$('#notifyMe').on('click',function(){
+  $("html, body").animate({ scrollTop: 0 }, 600);
+  $('.notifyMeinner').css('display','block');
+  $('.ajaxcart__overlay').css({'visibility':'visible','opacity':'0.7'});
+  $('.ajaxcart__overlay').on('click',function(){
+         $('.notifyMeinner').fadeOut('slow');
+        $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+    });
+});
+
+// Create a custom modal for the collections page to grab the correct productId
+// And create a BIS notification
+$('.notify').on('click',function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    $('.ajaxcart__overlay').css({'visibility':'visible','opacity':'0.7'});
+    var theProductImage = $(this).parent().prev('.grid__image').find('img');
+    var productId = $.trim($(this).next('.theVars').find('.theProdId')[0].innerHTML);
+    var variantId = $.trim($(this).next('.theVars').find('.variantId')[0].innerHTML);
+
+    // Create the new HTML popup with the custom image
+    var newModal = $('<div class="newPop"><span class="notifyCloseCollection">x</span><h1>KEEP ME POSTED</h1>'+theProductImage[0].outerHTML+'<div class="lowertext"><h2>THIS ITEM IS CURRENTLY OUT OF STOCK.</h2><h2>LEAVE US YOUR INFO AND WE’LL NOTIFY YOU WHEN THE ITEM BECOMES AVAILABLE.</h2> </div><label for="email"> email </label><input type="email" class="notify_email"><button class="sendMe">Send</button><div class="hiddenVars"><span id="prodInnerId">'+productId+'</span><span id="valInner">'+variantId+'</span>');
+    // Append the new popup to the body of the document
+    $('body').append(newModal);
+
+    var email = $('.notify_email').val();
+
+    $('.sendMe').on('click',function(e) {
+          var email = $('.notify_email').val();
+          var productId = $(this).next('.hiddenVars').find("#prodInnerId")[0].innerHTML;
+          var variantId = $(this).next('.hiddenVars').find("#valInner")[0].innerHTML;
+
+          e.preventDefault();
+          BIS.create(email, variantId, productId); // create the notification
+          $(this).addClass('sendChange');
+          $(this)[0].innerHTML = "We will keep you updated!";
+      });
+    // Create a function to close and destroy the new POP up after the popup
+    // Has been created
+     $('.notifyCloseCollection').on('click',function(){
+        $('.newPop').remove();
+        $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+
+    });
+
+     $('.ajaxcart__overlay').on('click',function(){
+
+      if ($('.newPop').css('position','absolute')) {
+        $('.newPop').remove();
+        $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+      }
+    });
+});
+
+$('#notifyClose').on('click',function(){
+  $('.notifyMeinner').fadeOut('slow');
+  $('.ajaxcart__overlay').css({'visibility':'','opacity':'0.7'});
+});
+
+
+
+// Add a fade under the header when the user scrolls
+$(document).scroll(function(){
+    if ($(window).width() < 960) {
+        if ($(document).scrollTop() > 39.95) {
+            $('.site-header').css('position','fixed');
+
+            $('.main-content').css('margin-top','100px');
+            $('.main-menu-dropdown').removeClass('dropdown-top');
+            $('#desktopfake').css('opacity','0');
+        } else {
+            $('.site-header').css('position','relative');
+             $('.main-content').css('margin-top','0px');
+            $('.main-menu-dropdown').addClass('dropdown-top');
+            $('#desktopfake').css('opacity','1');
+        }
+        if ($(document).scrollTop() > 39.95) {
+            $('.site-header').css('box-shadow','1px 1px 8px rgba(102,102,102,0.3)').fadeIn();
+        } else {
+             $('.site-header').css('box-shadow','2px 2px 2px transparent');
+        }
+    } else  if ($(window).width() < 564) {
+        if ($(document).scrollTop() > 50) {
+
+            $('.site-header').css('position','fixed');
+            $('.main-content').css('margin-top','100px');
+            $('.main-menu-dropdown').removeClass('dropdown-top');
+            $('#desktopfake').css('opacity','0');
+        } else {
+            $('.site-header').css('position','relative');
+             $('.main-content').css('margin-top','0px');
+            $('.main-menu-dropdown').addClass('dropdown-top');
+            $('#desktopfake').css('opacity','1');
+        }
+        if ($(document).scrollTop() > 50) {
+            $('.site-header').css('box-shadow','1px 1px 8px rgba(102,102,102,0.3)').fadeIn();
+        } else {
+             $('.site-header').css('box-shadow','2px 2px 2px transparent');
+        }
+    }
+    else {
+
+      if ($(document).scrollTop() > 39.95) {
+          $('.site-header').css('position','fixed');
+          $('.main-content').css('margin-top','188px');
+          $('.main-menu-dropdown').removeClass('dropdown-top');
+          $('#desktopfake').css('opacity','0');
+      } else {
+          $('.site-header').css('position','relative');
+           $('.main-content').css('margin-top','0px');
+          $('.main-menu-dropdown').addClass('dropdown-top');
+          $('#desktopfake').css('opacity','1');
+      }
+      if ($(document).scrollTop() > 39.95) {
+          $('.site-header').css('box-shadow','1px 1px 8px rgba(102,102,102,0.3)').fadeIn();
+      } else {
+           $('.site-header').css('box-shadow','2px 2px 2px transparent');
+      }
+    }
+
+});
+
+//Fade interaction when the site loads for a smooth side load
+//Also add Fixed nav functionality if the page loads at a lower area
+$(document).ready(function(){
+    $('.main-content').css('opacity','1');
+    if ($(window).width() < 960) {
+        if ($(document).scrollTop() > 39.95) {
+            $('.site-header').css('position','fixed');
+            $('.main-content').css('margin-top','100px');
+            $('.main-menu-dropdown').removeClass('dropdown-top');
+            $('#desktopfake').css('opacity','0');
+        } else {
+            $('.site-header').css('position','relative');
+             $('.main-content').css('margin-top','0px');
+            $('.main-menu-dropdown').addClass('dropdown-top');
+            $('#desktopfake').css('opacity','1');
+        }
+        if ($(document).scrollTop() > 39.95) {
+            $('.site-header').css('box-shadow','1px 1px 8px rgba(102,102,102,0.3)').fadeIn();
+        } else {
+             $('.site-header').css('box-shadow','2px 2px 2px transparent');
+        }
+    }else  if ($(window).width() < 564) {
+        if ($(document).scrollTop() > 45) {
+
+            $('.site-header').css('position','fixed');
+            $('.main-content').css('margin-top','100px');
+            $('.main-menu-dropdown').removeClass('dropdown-top');
+            $('#desktopfake').css('opacity','0');
+        } else {
+            $('.site-header').css('position','relative');
+             $('.main-content').css('margin-top','0px');
+            $('.main-menu-dropdown').addClass('dropdown-top');
+            $('#desktopfake').css('opacity','1');
+        }
+        if ($(document).scrollTop() > 45) {
+            $('.site-header').css('box-shadow','1px 1px 8px rgba(102,102,102,0.3)').fadeIn();
+        } else {
+             $('.site-header').css('box-shadow','2px 2px 2px transparent');
+        }
+    }
+    else {
+
+      if ($(document).scrollTop() > 39.95) {
+          $('.site-header').css('position','fixed');
+          $('.main-content').css('margin-top','188px');
+          $('.main-menu-dropdown').removeClass('dropdown-top');
+          $('#desktopfake').css('opacity','0');
+      } else {
+          $('.site-header').css('position','relative');
+           $('.main-content').css('margin-top','0px');
+          $('.main-menu-dropdown').addClass('dropdown-top');
+          $('#desktopfake').css('opacity','1');
+      }
+      if ($(document).scrollTop() > 39.95) {
+          $('.site-header').css('box-shadow','1px 1px 8px rgba(102,102,102,0.3)').fadeIn();
+      } else {
+           $('.site-header').css('box-shadow','2px 2px 2px transparent');
+      }
+    }
+
+});
+
+// Customize color dropdown option for filter categories
+$(document).ready(function() {
+  $('select').niceSelect();
+  // $('.single-option-selector').selectBox();
+
+  $('.list li').each(function(){
+    var attrColo = $(this).attr('data-value');
+      if(attrColo ==="Blue") {
+        $(this).addClass('blue');
+      }  else if (attrColo ==="Black") {
+        $(this).addClass('black');
+      } else if (attrColo ==="Pink") {
+        $(this).addClass('pink');
+      } else if (attrColo ==="Red") {
+        $(this).addClass('red');
+      } else if (attrColo ==="Green") {
+        $(this).addClass('green');
+      } else if (attrColo ==="White") {
+        $(this).addClass('white');
+      } else if (attrColo ==="Gray") {
+        $(this).addClass('gray');
+      } else if (attrColo ==="Purple") {
+        $(this).addClass('purple');
+      }  else if (attrColo ==="Grey") {
+        $(this).addClass('grey');
+      } else if (attrColo ==="Yellow") {
+        $(this).addClass('yellow');
+      } else if (attrColo ==="Multi") {
+        $(this).addClass('multi');
+      }
+  });
+
+   $('.list li').each(function(){
+    var attrColo = $(this).attr('data-value');
+      if(attrColo ==="blue") {
+        $(this).addClass('blue');
+      }  else if (attrColo ==="black") {
+        $(this).addClass('black');
+      } else if (attrColo ==="pink") {
+        $(this).addClass('pink');
+      } else if (attrColo ==="red") {
+        $(this).addClass('red');
+      } else if (attrColo ==="green") {
+        $(this).addClass('green');
+      } else if (attrColo ==="white") {
+        $(this).addClass('white');
+      } else if (attrColo ==="gray") {
+        $(this).addClass('gray');
+      } else if (attrColo ==="purple") {
+        $(this).addClass('purple');
+      }  else if (attrColo ==="grey") {
+        $(this).addClass('grey');
+      } else if (attrColo ==="yellow") {
+        $(this).addClass('yellow');
+      } else if (attrColo ==="multi") {
+        $(this).addClass('multi');
+      }
+  });
+  // Customize the current one
+  $('.current').each(function(){
+    var otherAtt = $(this).text();
+        if(otherAtt ==="blue") {
+        $(this).addClass('blue');
+      }  else if (otherAtt ==="black") {
+        $(this).addClass('black');
+      } else if (otherAtt ==="pink") {
+        $(this).addClass('pink');
+      } else if (otherAtt ==="red") {
+        $(this).addClass('red');
+      } else if (otherAtt ==="green") {
+        $(this).addClass('green');
+      } else if (otherAtt ==="white") {
+        $(this).addClass('white');
+      } else if (otherAtt ==="gray") {
+        $(this).addClass('gray');
+      } else if (otherAtt ==="purple") {
+        $(this).addClass('purple');
+      }  else if (otherAtt ==="grey") {
+        $(this).addClass('grey');
+      } else if (otherAtt ==="yellow") {
+        $(this).addClass('yellow');
+      } else if (otherAtt ==="multi") {
+        $(this).addClass('multi');
+      } else if(otherAtt ==="Blue") {
+        $(this).addClass('blue');
+      }  else if (otherAtt ==="Black") {
+        $(this).addClass('black');
+      } else if (otherAtt ==="Pink") {
+        $(this).addClass('pink');
+      } else if (otherAtt ==="Red") {
+        $(this).addClass('red');
+      } else if (otherAtt ==="Green") {
+        $(this).addClass('green');
+      } else if (otherAtt ==="White") {
+        $(this).addClass('white');
+      } else if (otherAtt ==="Gray") {
+        $(this).addClass('gray');
+      } else if (otherAtt ==="Purple") {
+        $(this).addClass('purple');
+      }  else if (otherAtt ==="Grey") {
+        $(this).addClass('grey');
+      } else if (otherAtt ==="Yellow") {
+        $(this).addClass('yellow');
+      } else if (otherAtt ==="Multi") {
+        $(this).addClass('multi');
+      }
+  });
+
+        $('.hoverCaption').on('click',function(e){
+           if (e.target !== this) {
+            return;
+          } else {
+            window.location = $(this).attr('url-val');
+          }
+
+        });
+
+});
+
+
+$(document).ready(function() {
+$('.productImg').magnificPopup({type:'image'});
+// make the filters more intuitive
+
+if ($('.breadcrumb').hasClass('filtered')) {
+
+  var theFilterTags = $('.breadcrumb .tags')[0].innerHTML;
+  var splitTags = theFilterTags.split(" ");
+  console.log(splitTags);
+
+
+  $('.custom-filter input').each(function(){
+     var theVal = $(this).val();
+
+     for (x=0; x < splitTags.length; x++) {
+
+        if (theVal === splitTags[x]) {
+          $(this).prev('label').addClass('selected-query');
+          $(this).addClass('search-param');
+          console.log($(this));
+        }
+
+      }
+  });
+
+
+
+} else {
+   console.log('no tags');
+}
+
+});
+
+/// Make the shipping page link correctly
+
+var pageID = $('body').attr('id');
+if (pageID === "returns-and-shipping") {
+  var currentURL = window.location.hash;
+  if (currentURL.includes('#returns')) {
+    $('body,html').animate({
+      scrollTop: 200
+    });
+  }
+  $('#returns-footer').attr('href','/pages/returns-and-shipping#returns-1');
+  $('#returns-footer').on('click',function(){
+    $('body,html').animate({
+      scrollTop: 200
+    });
+  });
+}

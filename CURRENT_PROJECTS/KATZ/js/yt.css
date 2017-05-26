@@ -1,0 +1,2446 @@
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: rr, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #cc89ed;
+    background-color: #f2e6d8;
+    overflow-x: hidden;
+}
+html {
+    width: 100%;
+    height: 100%}
+h1, h2, h3, h4, h5, h6 {
+    margin: 12px 0 12px;
+    text-transform: uppercase;
+    font-family: LYD,Futura-CondensedExtraBold, Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-stretch: condensed;
+    font-weight: 700;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+h4 {
+    font-size:16px;
+}
+/* Define the fonts */
+
+@font-face {
+  font-family: 'LYD';
+  src: url('../fonts/LYD_1.ttf'); /* IE9 Compat Modes */
+
+}
+
+@font-face {
+  font-family: 'Bebas_Thin';
+  src: url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueThin.otf'); /* IE9 Compat Modes */
+  src:url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueThin.ttf')  format('truetype'), /* Safari, Android, iOS */
+
+}
+
+@font-face {
+  font-family: 'Bebas_Regular';
+  src: url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueRegular.otf'); /* IE9 Compat Modes */
+  src:url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
+
+}
+
+@font-face {
+  font-family: 'Bebas_Light';
+  src: url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueLight.otf'); /* IE9 Compat Modes */
+  src:url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+
+}
+
+@font-face {
+  font-family: 'Bebas_Book';
+  src: url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueBook.otf'); /* IE9 Compat Modes */
+  src:url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueBook.ttf')  format('truetype'), /* Safari, Android, iOS */
+
+}
+
+@font-face {
+  font-family: 'Bebas_Bold';
+  src: url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueBold.otf'); /* IE9 Compat Modes */
+  src:url('http://madeline-omoore.com/YTURKS/nye2015/fonts/BebasNeueBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+
+}
+
+@font-face {
+
+
+   font-family: 'Hind', sans-serif;
+}
+
+p {
+    margin: 0 0 25px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+
+.artist h1 {
+    font-size: 25px;
+    margin: 0 0 5px;
+    padding-bottom: 25px;
+        font-weight: normal;
+        color:white;
+}
+
+
+.artist {
+    color: white;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: white;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 1px;
+}
+
+.row {
+    margin: 0px;
+}
+
+#about p {
+    font-size: 4em;
+    text-transform: uppercase;
+    font-family: 'Bebas_Regular', Futura-CondensedExtraBold, Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-stretch: condensed;
+    font-weight: bold;
+}
+
+
+h1.event_name {
+
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 72px;
+    font-size: 8em;
+    font-weight: 900;
+    font-family: "Bebas_Bold", Arial,Helvetica,sans-serif;
+    background-position: 50%;
+    top: 35%;
+    position: relative;
+    background-size: 90%;
+
+}
+
+
+h2.event_sub {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    top: 35%;
+    position: relative;
+    font-weight: normal !important;
+}
+
+p.concert_info {
+    font-family: Bebas_Bold;
+    font-size: 3.5em;
+}
+
+.col-lg-8.col-lg-offset-2.line-up-list {
+        padding: 0px 0px;
+
+}
+
+
+.tickets-section h1 {
+    font-size: 20px;
+    padding: 0px 24px;
+}
+
+
+.navbar-right li {
+    vertical-align: top;
+    position: relative;
+    padding: 10px 15px;
+    margin-top: 10px;
+    display: list-item;
+    clear: both;
+}
+
+
+ul.navbar-right {
+        display: block;
+        list-style: none;
+
+
+}
+
+@media (min-width:767px) {
+
+.navbar-right li {
+    vertical-align: top;
+    position: relative;
+    padding: 10px 15px;
+    margin-top: 10px;
+    display: inline-block;
+    clear: both;
+}
+
+ul.navbar-right {
+        display: inline-flex;
+        list-style: none;
+
+
+}
+
+
+h1.event_name {
+
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 72px;
+    font-size: 5em;
+    font-weight: 900;
+    font-family: "Bebas_Bold", Arial,Helvetica,sans-serif;
+    background-position: 50%;
+    top: 30%;
+    position: relative;
+    background-size: 90%;
+}
+
+h2.event_sub {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    top: 35%;
+    position: relative;
+    font-weight: normal !important;
+}
+
+.col-lg-8.col-lg-offset-2.line-up-list {
+    padding: 0px 60px;
+}
+
+
+.tickets-section {
+    padding: 0px 60px;
+}
+    p {
+    margin: 0 0 35px;
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.tickets-section h1 {
+    font-size: 50px;
+    padding: 0px 0px;
+}
+p.concert_info {
+    font-family: "Bebas_Bold";
+    font-size: 5em;
+    line-height: 1.3;
+}
+.col-lg-8.col-lg-offset-2.line-up-list {
+        padding: 0px 0px;
+
+}
+
+.content-section {
+    padding-top: 0px;
+}
+
+
+
+}a {
+    color: white;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+a img {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+a img:hover {
+
+}
+a:focus, a:hover {
+    text-decoration: none;
+
+}
+.light {
+    font-weight: 400;
+}
+.navbar-custom {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(204, 137, 237, .3);
+    text-transform: uppercase;
+    font-family: "HIND", Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    background-color:    #ffca6c;
+    font-weight: bold;
+}
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+}
+.navbar-custom .navbar-brand:focus {
+    outline: 0;
+}
+.navbar-custom .navbar-brand .navbar-toggle {
+    padding: 4px 6px;
+    font-size: 12px;
+    color: #cc89ed;
+}
+.navbar-custom .navbar-brand .navbar-toggle:active, .navbar-custom .navbar-brand .navbar-toggle:focus {
+    outline: 0;
+}
+.navbar-custom a {
+    color: black;
+}
+.navbar-custom .nav li.active {
+    outline: 0;
+    opacity: 0.7;
+}
+.navbar-custom .nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.navbar-custom .nav li a.active, .navbar-custom .nav li a:focus, .navbar-custom .nav li a:hover {
+
+
+}
+.dropdown-menu>.active>a {
+
+}
+
+ul.navbar-left {
+        display: none;
+        list-style: none;
+
+}
+
+
+
+@media (min-width:767px) {
+
+    ul.navbar-left {
+        display: inline-block;
+        list-style: none;
+
+}
+
+	#about p {
+		font-size: 4em;
+		    text-transform: uppercase;
+    font-family: "Bebas_Bold", Futura-CondensedExtraBold, Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-stretch: condensed;
+    font-weight: 700;
+    font-weight: bold;
+    letter-spacing: 1px;
+	}
+
+	h1.event_name {
+
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 72px;
+    font-size: 12em;
+    font-weight: 900;
+    font-family: "Bebas_Bold", Arial,Helvetica,sans-serif;
+    background-position: 50%;
+        top: 30%;
+    position: relative;
+    background-size: 90%;
+}
+
+h2.event_sub {
+    color: white;
+    font-size: 34px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+     top: 40%;
+    position: relative;
+}
+
+.artist h1 {
+    font-size: 50px;
+    margin: 0 0 5px;
+    padding-bottom: 48px;
+}
+
+}
+
+
+
+@media (min-width:767px) {
+    .navbar {
+    padding: 20px 0;
+    border-bottom: none;
+    letter-spacing: 1px;
+    background: 0 0;
+    -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+    transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+.top-nav-collapse {
+    padding: 0;
+    background-color:  white;
+}
+.navbar-custom.top-nav-collapse {
+    border-bottom: 1px solid white;
+}
+}.intro {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    color: #f2e6d8;
+    background-color: #f2e6d8;
+    background-image: url(../img/sandybeach-purp.png);
+}
+.intro .intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/spash2.png)no-repeat bottom center scroll;
+    background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    z-index: 2;
+}
+.intro .intro-slideshow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60%;
+    z-index: 1;
+}
+.intro #myslider {
+    height: 100%}
+.intro .intro-slideshow img {
+    height: 100%}
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #f2e6d8;
+    border-radius: 35px;
+    font-size: 40px;
+    color: #f2e6d8;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.btn-circle:focus, .btn-circle:hover {
+    outline: 0;
+    color: #f2e6d8;
+    background: rgba(242, 230, 216, .1);
+}
+.btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+.btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+@-webkit-keyframes pulse {
+    0 {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+}.download-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #FF4F35;
+    background-size: cover;
+    text-align: center;
+
+}
+;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#end {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+    background: url(../img/texture.png)no-repeat center center scroll;
+}
+@media screen and (min-width:767px) {
+    .content-section {
+        padding-top: 0px;
+}
+.download-section {
+    padding: 150px 0;
+}
+#map {
+    height: 400px;
+    margin-top: 250px;
+}
+
+a.artist {
+    color: purple;
+}
+a.artist:hover {
+  color: purple;
+}
+a.artist h1 {
+    font-size: 50px;
+    margin: 0 0 5px;
+}
+a.artist h1 small {
+    color: #000;
+}
+
+
+}.btn {
+    text-transform: uppercase;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.btn-default {
+    border: 0px solid white;
+    border-radius: 0;
+    color: white;
+    background-color: transparent;
+}
+.btn-default:focus, .btn-default:hover {
+    border: 0px solid white;
+    outline: 0;
+    color: white;
+    background-color: black;
+}
+.btn-inverse {
+    border: 3px solid white;
+    border-radius: 0;
+    color: white;
+    background-color: transparent;
+}
+.btn-inverse:focus, .btn-inverse:hover {
+    border: 3px solid white;
+    outline: 0;
+    color: black;
+    background-color: white;
+}
+ul.banner-social-buttons {
+    margin-top: 0;
+}
+
+
+@media (max-width:1199px) {
+    ul.banner-social-buttons {
+    margin-top: 15px;
+}
+}@media (max-width:375px) {
+    ul.banner-social-buttons li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+}
+ul.banner-social-buttons li:last-child {
+    margin-bottom: 0;
+}
+}footer {
+    padding: 0px 0px 0px;
+}
+footer p {
+    margin: 0;
+}
+::-moz-selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(242, 230, 216, .2);
+}
+::selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(242, 230, 216, .2);
+}
+img::-moz-selection {
+    background: 0 0;
+}
+img::selection {
+    background: 0 0;
+}
+img::-moz-selection {
+    background: 0 0;
+}
+body {
+    webkit-tap-highlight-color: rgba(242, 230, 216, .2);
+}
+.inverse {
+    color: #cc89ed;
+}
+.inverse-bg {
+    background-color: #f2e6d8;
+}
+.tix-bg {
+    width: 100%;
+    padding: 175px 0;
+    background-image: url(img/tix-bg.png);
+    background-size: cover;
+}
+.thumbnail {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+#logo {
+    top: -10px;
+}
+dl {
+    font-family: Monaco, 'Lucida console'}
+dt {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+dd {
+    padding-bottom: 1em;
+    font-family: futura;
+}
+.dropdown-menu {
+    background-color: #f9edc6;
+}
+.smaller {
+    max-width: 60%;
+    margin: 0 auto;
+}
+.styled-select {
+    display: inline-block;
+    width: 350px;
+    line-height: 1.33;
+    overflow: hidden;
+    background: url(img/down.png)no-repeat 96% #f2e6d8;
+}
+.styled-select select {
+    background-color: transparent;
+    color: #cc89ed;
+    width: 300px;
+    height: 48px;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+.styled-select-inv {
+    display: inline-block;
+    width: 300px;
+    line-height: 1.33;
+    overflow: hidden;
+    background: url(img/down.png)no-repeat 96% #cc89ed;
+}
+.styled-select-inv select {
+    background-color: transparent;
+    color: #f2e6d8;
+    width: 300px;
+    height: 48px;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+.styled-select-easy {
+    width: 390px;
+}
+.styled-select-easy select {
+    width: 390px;
+}
+
+
+@media (max-width:767px) {
+    .styled-select-easy select {
+    margin-left: 0;
+}
+
+
+
+}
+
+.tix {
+    background-color: #cc89ed;
+    color: #f2e6d8;
+}
+.caption h3 {
+    font-size: 23px;
+}
+.navbar .nav, .navbar .nav>li {
+    float: none;
+    /*display: inline-block; */
+    vertical-align: top;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+
+
+.navbar-left li {
+
+     vertical-align: top;
+       position: relative;
+    display: block;
+    padding: 10px 15px;
+    float:left;
+}
+.navbar-collapse {
+    text-align: center;
+}
+@-webkit-keyframes animate-rotate {
+    from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+}
+to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}.rotate-it {
+    -webkit-animation: animate-rotate 30s reverse linear infinite;
+}
+.huerotate {
+    color: #cc89ed;
+    -webkit-animation: 5s color-rotate linear infinite;
+}
+.huerotate2 {
+    color: #cc89ed;
+    -webkit-animation: 10s color-rotate linear infinite;
+}
+.huerotate3 {
+    background-color: #cc89ed;
+    -webkit-animation: 10s color-rotate linear infinite;
+}
+@-webkit-keyframes color-rotate {
+    0% {
+    -moz-transform: rotate(0) translate(0);
+    -webkit-filter: hue-rotate(0);
+    -o-transform: rotate(0) translate(0);
+    -webkit-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+}
+100% {
+    -moz-transform: rotate(0) translate(0);
+    -webkit-filter: hue-rotate(360deg);
+    -o-transform: rotate(0) translate(0);
+    -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+}
+}.symblol {
+    font-size: 200px;
+    color: #cc89ed!important;
+    color: #fff;
+}
+.caption h3 {
+    color: #fff;
+}
+#about {
+    background: url(../img/intro-bg.jpg)no-repeat bottom center scroll;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.ditd-date {
+    font-size: 32px;
+    font-family: rr;
+    border: 3px solid #cc89ed;
+    padding: 0 10px;
+    color: #cc89ed;
+    position: absolute;
+    bottom: 26px;
+    left: 40%;
+    z-index: 9999!important;
+    text-transform: uppercase;
+}
+.small {
+    font-size: 120%}
+#tickets {
+    width: 100%;
+
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color:white;
+}
+
+
+
+img.yt_header {
+	      width: 50px;
+}
+
+
+img.sib_header {
+	position: relative;
+	top: 15px;
+	    width: 80px;
+}
+
+@media only screen and (min-device-width:320px)and (max-device-width:480px) {
+    .artist h1 {
+    font-size: 30px!important;
+}
+
+.ditd-date {
+    font-size: 20px!important;
+    left: 20%!important;
+    bottom: 53px;
+}
+p {
+    font-size: 4em!important;
+}
+#about p:first {
+    padding-top: 10px;
+}
+.intro {
+    height: 88vh;
+}
+.intro-overlay {
+    top: 56px!important;
+    height: 89%!important;
+}
+.styled-select, .styled-select-inv select {
+    width: 90vw!important;
+}
+.intro {
+    background-color: #cc89ed;
+    /*-webkit-animation: 10s color-rotate linear infinite;*/
+}
+
+
+ul.navbar-left {
+    display: none;
+}
+
+
+
+}
+
+
+
+.intro {
+	    background: linear-gradient(#D08ECD,#C7C6CB);
+        background-size: cover;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#line-up {
+	    background: linear-gradient(#D08ECD,#C7C6CB);
+	    text-align: left;
+
+
+}
+
+.concert_info {
+    text-align: center;
+}
+
+h1.tickets_info {
+    font-size: 5em;
+    line-height: 1.3;
+}
+
+.bolder_wd {
+        font-weight: 900;
+    font-family: 'Bebas_Bold';
+}
+
+.tickets-section {
+        padding-top: 150px;
+
+	        padding-bottom: 150px;
+}
+
+
+
+.nav>li>a>img {
+    max-width: 100px;
+}
+
+#about{
+
+	    background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR32_gJ5Ildn9EMRz-2ug6hXSeg-Nnqh8RuXinmdvOyB7j1ErnLCg);
+    background-size: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: yellow;
+    text-align: center;
+}
+
+
+
+.network-name img {
+	width: 100px;
+}
+
+.network-name img.yt {
+	width: 60px;
+}
+
+a.page-scroll {
+    top: 15px;
+    font-family: "LYD";
+}
+
+.info_tix {
+	font-weight: lighter;
+}
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px) {
+.info_tix  {
+    font-size: 30px!important;
+}
+
+ul {
+        -webkit-padding-start: 0px;
+
+}
+
+}
+
+i.fa.fa-bars {
+    color:rgb(255, 202, 108);
+}
+
+.info-span {
+          display: block;
+    width: 100%;
+    text-align: center;
+
+
+}
+
+
+a:hover, a:focus {
+    text-decoration: underline;
+
+}
+
+.bolder_wd {color:#cc89ed;}
+
+  iframe {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+
+    }
+
+
+
+
+
+    /*** ZEBRA KATZ ***/
+@media screen and (max-width: 767) {
+    #top {
+    width: auto;
+    height: 100vh;
+    left: -100%;
+}
+}
+    #top {
+        width: 100%;
+    }
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: initial;
+}
+
+.carousel-control.left {
+
+    background-image: none;
+
+}
+
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: none;
+
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next {
+    width: 0px;
+    height: 30px;
+    margin-top: -15px;
+    font-size: 0px;
+}
+
+
+.gif-container div{
+    padding:0px;
+}
+
+.col-md-6, .col-md-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 0px !important;
+    padding-left: 0px;
+}
+
+.navbar-center li {
+    vertical-align: top;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    float: left;
+}
+a:focus {
+    color:black;
+}
+
+.navbar-center li a {
+        padding: 0 12px;
+}
+
+a.social {
+    color:white;
+    text-transform: uppercase;
+    font-family: "LYD";
+}
+
+/* OVER LAY */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+html {
+  min-height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font: 400 1.4rem 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.0rem;
+  line-height: 4.2rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+section button {
+  margin: 0 auto;
+  font-size: 2.0rem;
+  padding: 1.25rem 2.5rem;
+  display: block;
+  background-color: #009ac9;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font-weight: 300;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+section button:hover {
+  background-color: #ffffff;
+  color: #009ac9;
+  border-color: #009ac9;
+}
+
+.overlay {
+        position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.71);
+}
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  font-size: 54px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  width: 100vw;
+}
+.overlay ul li {
+  display: block;
+  height: 20%;
+  height: calc(100% / 5);
+}
+.overlay ul li a {
+  font-weight: 300;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.overlay ul li a:hover, .overlay ul li a:focus {
+  color: rgba(255, 255, 255, 0.7);
+}
+.overlay .close {
+
+    width: 60px;
+    height: 30px;
+    position: relative;
+    right: 10%;
+    overflow: hidden;
+    border: none;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/113212/cross.png) no-repeat center center;
+    text-indent: 200%;
+    outline: none;
+    color: transparent;
+    z-index: 100;
+    top: -100px;
+}
+
+.overlay-effect {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  -moz-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+.overlay-effect.open {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+      z-index: 2000;
+    /* position: relative; */
+    top: 0px;
+    width: 100%;
+    padding-top: 0px;
+}
+.overlay-effect nav {
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+}
+.overlay-effect nav ul {
+  opacity: 0.4;
+  -webkit-transform: translateY(-25%) rotateX(35deg);
+  transform: translateY(-25%) rotateX(35deg);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlay-effect.open nav ul {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+.overlay-effect.close nav ul {
+  -webkit-transform: translateY(25%) rotateX(-35deg);
+  transform: translateY(25%) rotateX(-35deg);
+}
+
+
+.overlay .col-md-4 {
+
+    text-align: left;
+}
+
+.overlay h2 {
+    color:white;
+    text-align: left;
+        font-size: 12px;
+}
+
+.overlay h1 {
+    color:white;
+    text-align: left;
+        font-size: 18px;
+            margin: 5px 0px;
+
+}
+
+.overlay h4 {
+    font-family: "Hind";
+    color:white;
+        font-size: 12px;
+        text-align: left;
+            margin-top: -12px;
+}
+
+/*!
+Video.js Default Styles (http://videojs.com)
+Version 4.1.0
+Create your own skin at http://designer.videojs.com
+*/
+/* SKIN
+================================================================================
+The main class name for all skin-specific styles. To make your own skin,
+replace all occurances of 'vjs-default-skin' with a new name. Then add your new
+skin name to your video tag instead of the default skin.
+e.g. <video class="video-js my-skin-name">
+*/
+.vjs-default-skin {
+  color: #888888;
+}
+/* Custom Icon Font
+--------------------------------------------------------------------------------
+The control icons are from a custom font. Each icon corresponds to a character
+(e.g. "\e001"). Font icons allow for easy scaling and coloring of icons.
+*/
+@font-face {
+  font-family: 'VideoJS';
+  src: url('font/vjs.eot');
+  src: url('font/vjs.eot?#iefix') format('embedded-opentype'), url('font/vjs.woff') format('woff'), url('font/vjs.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Base UI Component Classes
+--------------------------------------------------------------------------------
+*/
+/* Slider - used for Volume bar and Seek bar */
+.vjs-default-skin .vjs-slider {
+  /* Replace browser focus hightlight with handle highlight */
+  outline: 0;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  /* background-color-with-alpha */
+  background-color: #333333;
+  background-color: rgba(51, 51, 51, 0.9);
+}
+.vjs-default-skin .vjs-slider:focus {
+  /* box-shadow */
+  -webkit-box-shadow: 0 0 2em #ffffff;
+  -moz-box-shadow: 0 0 2em #ffffff;
+  box-shadow: 0 0 2em #ffffff;
+}
+.vjs-default-skin .vjs-slider-handle {
+  position: absolute;
+  /* Needed for IE6 */
+  left: 0;
+  top: 0;
+}
+.vjs-default-skin .vjs-slider-handle:before {
+  content: "\e009";
+  font-family: VideoJS;
+  font-size: 1em;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0em 0em 1em #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Rotate the square icon to make a diamond */
+  /* transform */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  color: #fff;
+}
+/* Control Bar
+--------------------------------------------------------------------------------
+The default control bar that is a container for most of the controls.
+*/
+.vjs-default-skin .vjs-control-bar {
+  /* Start hidden */
+  display: none;
+  position: absolute;
+  /* Place control bar at the bottom of the player box/video.
+     If you want more margin below the control bar, add more height. */
+  bottom: 0;
+  /* Use left/right to stretch to 100% width of player div */
+  left: 0;
+  right: 0;
+  /* Height includes any margin you want above or below control items */
+  height: 3.0em;
+  /* background-color-with-alpha */
+  background-color: #333333;
+  background-color: rgba(51, 51, 51, 0.7);
+  display: none;
+}
+/* General styles for individual controls. */
+.vjs-default-skin .vjs-control {
+  outline: none;
+  position: relative;
+  float: left;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 3.0em;
+  width: 4em;
+}
+/* FontAwsome button icons */
+.vjs-default-skin .vjs-control:before {
+  font-family: VideoJS;
+  font-size: 1.5em;
+  line-height: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+/* Replacement for focus outline */
+.vjs-default-skin .vjs-control:focus:before,
+.vjs-default-skin .vjs-control:hover:before {
+  color: #fff;
+  text-shadow: 0em 0em 1em #ffffff;
+}
+.vjs-default-skin .vjs-control:focus {
+  /*  outline: 0; */
+  /* keyboard-only users cannot see the focus on several of the UI elements when
+  this is set to 0 */
+}
+/* Hide control text visually, but have it available for screenreaders */
+.vjs-default-skin .vjs-control-text {
+  /* hide-visually */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* Play/Pause
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-play-control {
+  width: 5em;
+  cursor: pointer;
+}
+.vjs-default-skin .vjs-play-control:before {
+  content: "\e001";
+}
+.vjs-default-skin.vjs-playing .vjs-play-control:before {
+  content: "\e002";
+}
+/* Volume/Mute
+-------------------------------------------------------------------------------- */
+.vjs-default-skin .vjs-mute-control,
+.vjs-default-skin .vjs-volume-menu-button {
+  cursor: pointer;
+  float: right;
+}
+.vjs-default-skin .vjs-mute-control:before,
+.vjs-default-skin .vjs-volume-menu-button:before {
+  content: "\e006";
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-0:before,
+.vjs-default-skin .vjs-volume-menu-button.vjs-vol-0:before {
+  content: "\e003";
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-1:before,
+.vjs-default-skin .vjs-volume-menu-button.vjs-vol-1:before {
+  content: "\e004";
+}
+.vjs-default-skin .vjs-mute-control.vjs-vol-2:before,
+.vjs-default-skin .vjs-volume-menu-button.vjs-vol-2:before {
+  content: "\e005";
+}
+.vjs-default-skin .vjs-volume-control {
+  width: 5em;
+  float: right;
+}
+.vjs-default-skin .vjs-volume-bar {
+  width: 5em;
+  height: 0.6em;
+  margin: 1.1em auto 0;
+}
+.vjs-default-skin .vjs-volume-menu-button .vjs-menu-content {
+  height: 2.9em;
+}
+.vjs-default-skin .vjs-volume-level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.5em;
+  background: #b40c1e url() -50% 0 repeat;
+}
+.vjs-default-skin .vjs-volume-bar .vjs-volume-handle {
+  width: 0.5em;
+  height: 0.5em;
+}
+.vjs-default-skin .vjs-volume-handle:before {
+  font-size: 0.9em;
+  top: -0.2em;
+  left: -0.2em;
+  width: 1em;
+  height: 1em;
+}
+.vjs-default-skin .vjs-volume-menu-button .vjs-menu .vjs-menu-content {
+  width: 6em;
+  left: -4em;
+}
+/* Progress
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-progress-control {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: auto;
+  font-size: 0.3em;
+  height: 1em;
+  /* Set above the rest of the controls. */
+  top: -1em;
+  /* Shrink the bar slower than it grows. */
+  /* transition */
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+/* On hover, make the progress bar grow to something that's more clickable.
+    This simply changes the overall font for the progress bar, and this
+    updates both the em-based widths and heights, as wells as the icon font */
+.vjs-default-skin:hover .vjs-progress-control {
+  font-size: .9em;
+  /* Even though we're not changing the top/height, we need to include them in
+      the transition so they're handled correctly. */
+  /* transition */
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+/* Box containing play and load progresses. Also acts as seek scrubber. */
+.vjs-default-skin .vjs-progress-holder {
+  height: 100%;
+}
+/* Progress Bars */
+.vjs-default-skin .vjs-progress-holder .vjs-play-progress,
+.vjs-default-skin .vjs-progress-holder .vjs-load-progress {
+  position: absolute;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* Needed for IE6 */
+  left: 0;
+  top: 0;
+}
+.vjs-default-skin .vjs-play-progress {
+  /*
+    Using a data URI to create the white diagonal lines with a transparent
+      background. Surprisingly works in IE8.
+      Created using http://www.patternify.com
+    Changing the first color value will change the bar color.
+    Also using a paralax effect to make the lines move backwards.
+      The -50% left position makes that happen.
+  */
+  background: #b40c1e url() -50% 0 repeat;
+}
+.vjs-default-skin .vjs-load-progress {
+  background: #757575;
+}
+.vjs-default-skin .vjs-seek-handle {
+  width: 1.5em;
+  height: 100%;
+}
+.vjs-default-skin .vjs-seek-handle:before {
+  padding-top: 0.1em /* Minor adjustment */;
+}
+/* Time Display
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-time-controls {
+  font-size: 1em;
+  /* Align vertically by making the line height the same as the control bar */
+  line-height: 3em;
+}
+.vjs-default-skin .vjs-current-time {
+  float: left;
+}
+.vjs-default-skin .vjs-duration {
+  float: left;
+}
+/* Remaining time is in the HTML, but not included in default design */
+.vjs-default-skin .vjs-remaining-time {
+  display: none;
+  float: left;
+}
+.vjs-time-divider {
+  float: left;
+  line-height: 3em;
+}
+/* Fullscreen
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-fullscreen-control {
+  width: 3.8em;
+  cursor: pointer;
+  float: right;
+}
+.vjs-default-skin .vjs-fullscreen-control:before {
+  content: "\e000";
+}
+/* Switch to the exit icon when the player is in fullscreen */
+.vjs-default-skin.vjs-fullscreen .vjs-fullscreen-control:before {
+  content: "\e00b";
+}
+/* Big Play Button (play button at start)
+--------------------------------------------------------------------------------
+Positioning of the play button in the center or other corners can be done more
+easily in the skin designer. http://designer.videojs.com/
+*/
+
+.vjs-poster:before {
+    content: "Last Name Katz";
+    color:white;
+    top:40%;
+    position: relative;
+}
+.vjs-default-skin .vjs-big-play-button {
+  /* Center it horizontally */
+  left: 50%;
+  margin-left: -1em;
+  /* Center it vertically */
+  top: 50%;
+  margin-top: -0.6em;
+  font-size: 5em;
+  color: #fff;
+  display: block;
+  z-index: 2;
+  position: absolute;
+  width: 2em;
+  height: 1.2em;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  opacity: 1;
+  /* Need a slightly gray bg so it can be seen on black backgrounds */
+  /* background-color-with-alpha */
+  background-color: transparent;
+  border: 0em solid #3b4249;
+  /* border-radius */
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+  /* box-shadow */
+  -webkit-box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.25);
+  /* transition */
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.vjs-default-skin:hover .vjs-big-play-button,
+.vjs-default-skin .vjs-big-play-button:focus {
+  outline: 0;
+  border-color: #fff;
+  /* IE8 needs a non-glow hover state */
+  background-color: #505050;
+  background-color: rgba(50, 50, 50, 0.75);
+  /* box-shadow */
+  -webkit-box-shadow: 0 0 3em #ffffff;
+  -moz-box-shadow: 0 0 3em #ffffff;
+  box-shadow: 0 0 3em #ffffff;
+  /* transition */
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+}
+.vjs-default-skin .vjs-big-play-button:before {
+  content: "\e001";
+  font-family: VideoJS;
+  /* In order to center the play icon vertically we need to set the line height
+     to the same as the button height */
+  line-height: 1.2em;
+  text-shadow: none;
+  text-align: center /* Needed for IE8 */;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+}
+/* Loading Spinner
+--------------------------------------------------------------------------------
+*/
+.vjs-loading-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5em;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  margin-left: -0.5em;
+  margin-top: -0.5em;
+  opacity: 0.75;
+  /* animation */
+  -webkit-animation: spin 1.5s infinite linear;
+  -moz-animation: spin 1.5s infinite linear;
+  -o-animation: spin 1.5s infinite linear;
+  animation: spin 1.5s infinite linear;
+}
+.vjs-default-skin .vjs-loading-spinner:before {
+  content: "\e00a";
+  font-family: VideoJS;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  text-shadow: 0em 0em 0.1em #000;
+}
+/* Add a gradient to the spinner by overlaying another copy.
+   Text gradient plus a text shadow doesn't work
+   and `background-clip: text` only works in Webkit. */
+.vjs-default-skin .vjs-loading-spinner:after {
+  content: "\e00a";
+  /* Loading spinner icon */
+  font-family: VideoJS;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* Menu Buttons (Captions/Subtitles/etc.)
+--------------------------------------------------------------------------------
+*/
+.vjs-default-skin .vjs-menu-button {
+  float: right;
+  cursor: pointer;
+}
+.vjs-default-skin .vjs-menu {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0em;
+  /* (Width of vjs-menu - width of button) / 2 */
+  width: 0em;
+  height: 0em;
+  margin-bottom: 3em;
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+  border-top: 1.55em solid #000000;
+  /* Same width top as ul bottom */
+  border-top-color: rgba(7, 40, 50, 0.5);
+  /* Same as ul background */
+}
+/* Button Pop-up Menu */
+.vjs-default-skin .vjs-menu-button .vjs-menu .vjs-menu-content {
+  display: block;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 10em;
+  bottom: 1.5em;
+  /* Same bottom as vjs-menu border-top */
+  max-height: 15em;
+  overflow: auto;
+  left: -5em;
+  /* Width of menu - width of button / 2 */
+  /* background-color-with-alpha */
+  background-color: #333333;
+  background-color: rgba(51, 51, 51, 0.7);
+  /* box-shadow */
+  -webkit-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+  box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
+}
+.vjs-default-skin .vjs-menu-button:hover .vjs-menu {
+  display: block;
+}
+.vjs-default-skin .vjs-menu-button ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0.3em 0 0.3em 0;
+  line-height: 1.4em;
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: lowercase;
+}
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected {
+  background-color: #000;
+}
+.vjs-default-skin .vjs-menu-button ul li:focus,
+.vjs-default-skin .vjs-menu-button ul li:hover,
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected:focus,
+.vjs-default-skin .vjs-menu-button ul li.vjs-selected:hover {
+  outline: 0;
+  color: #111;
+  /* background-color-with-alpha */
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.75);
+  /* box-shadow */
+  -webkit-box-shadow: 0 0 1em #ffffff;
+  -moz-box-shadow: 0 0 1em #ffffff;
+  box-shadow: 0 0 1em #ffffff;
+}
+.vjs-default-skin .vjs-menu-button ul li.vjs-menu-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 2em;
+  padding: 0;
+  margin: 0 0 0.3em 0;
+  font-weight: bold;
+  cursor: default;
+}
+/* Subtitles Button */
+.vjs-default-skin .vjs-subtitles-button:before {
+  content: "\e00c";
+}
+/* Captions Button */
+.vjs-default-skin .vjs-captions-button:before {
+  content: "\e008";
+}
+/* Replacement for focus outline */
+.vjs-default-skin .vjs-captions-button:focus .vjs-control-content:before,
+.vjs-default-skin .vjs-captions-button:hover .vjs-control-content:before {
+  /* box-shadow */
+
+}
+/*
+REQUIRED STYLES (be careful overriding)
+================================================================================
+When loading the player, the video tag is replaced with a DIV,
+that will hold the video tag or object tag for other playback methods.
+The div contains the video playback element (Flash or HTML5) and controls,
+and sets the width and height of the video.
+
+** If you want to add some kind of border/padding (e.g. a frame), or special
+positioning, use another containing element. Otherwise you risk messing up
+control positioning and full window mode. **
+*/
+.video-js {
+  background-color: #000;
+  position: relative;
+  padding: 0;
+  /* Start with 10px for base font size so other dimensions can be em based and
+     easily calculable. */
+  font-size: 10px;
+  /* Allow poster to be vertially aligned. */
+  vertical-align: middle;
+  /*  display: table-cell; */
+  /*This works in Safari but not Firefox.*/
+  /* Provide some basic defaults for fonts */
+  font-weight: normal;
+  font-style: normal;
+  /* Avoiding helvetica: issue #376 */
+  font-family: Arial, sans-serif;
+  /* Turn off user selection (text highlighting) by default.
+     The majority of player components will not be text blocks.
+     Text areas will need to turn user selection back on. */
+  /* user-select */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Playback technology elements expand to the width/height of the containing div
+    <video> or <object> */
+.video-js .vjs-tech {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when
+   checking fullScreenEnabled. */
+.video-js:-moz-full-screen {
+  position: absolute;
+}
+/* Fullscreen Styles */
+body.vjs-full-window {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  /* Fix for IE6 full-window. http://www.cssplay.co.uk/layouts/fixed.html */
+  overflow-y: auto;
+}
+.video-js.vjs-fullscreen {
+  position: fixed;
+  overflow: hidden;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+  /* IE6 full-window (underscore hack) */
+  _position: absolute;
+}
+.video-js:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* Poster Styles */
+.vjs-poster {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+.vjs-poster img {
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  padding: 0;
+  width: 100%;
+}
+/* Text Track Styles */
+/* Overall track holder for both captions and subtitles */
+.video-js .vjs-text-track-display {
+  text-align: center;
+  position: absolute;
+  bottom: 4em;
+  /* Leave padding on left and right */
+  left: 1em;
+  right: 1em;
+}
+/* Individual tracks */
+.video-js .vjs-text-track {
+  display: none;
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 0.1em;
+  /* Transparent black background, or fallback to all black (oldIE) */
+  /* background-color-with-alpha */
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.video-js .vjs-subtitles {
+  color: #ffffff /* Subtitles are white */;
+}
+.video-js .vjs-captions {
+  color: #ffcc66 /* Captions are yellow */;
+}
+.vjs-tt-cue {
+  display: block;
+}
+/* Fading sytles, used to fade control bar. */
+.vjs-fade-in {
+  display: block !important;
+  /* Visibility needed to make sure things hide in older browsers too. */
+  visibility: visible;
+  opacity: 1;
+  /* transition */
+  -webkit-transition: visibility 0.1s, opacity 0.1s;
+  -moz-transition: visibility 0.1s, opacity 0.1s;
+  -o-transition: visibility 0.1s, opacity 0.1s;
+  transition: visibility 0.1s, opacity 0.1s;
+}
+.vjs-fade-out {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  /* transition */
+  -webkit-transition: visibility 1.5s, opacity 1.5s;
+  -moz-transition: visibility 1.5s, opacity 1.5s;
+  -o-transition: visibility 1.5s, opacity 1.5s;
+  transition: visibility 1.5s, opacity 1.5s;
+  /* Wait a moment before fading out the control bar */
+  /* transition-delay */
+  -webkit-transition-delay: 2s;
+  -moz-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
+}
+/* Hide disabled or unsupported controls */
+.vjs-default-skin .vjs-hidden {
+  display: none;
+}
+.vjs-lock-showing {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+}
+/* -----------------------------------------------------------------------------
+The original source of this file lives at
+https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
+
+
+.padding {
+    padding-top: 50px;
+}
+
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #FB7A67;
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgba(0,0,0,0);
+    border: 0px solid #fff;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+
+a.darken {
+    display:table-cell;
+    background: black;
+    padding: 0;
+
+}
+a.darken:hover::before {
+
+    color: white;
+    top:25%;
+    left:30%;
+    position: absolute;
+    font-family: "LYD";
+}
+
+a.darken img {
+    display: block;
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+
+
+
+a.darken:hover img {
+    opacity: 0.3;
+
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,900);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wrap:after, .block small:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  font-size: 115%;
+  line-height: 1.55;
+  color: #f5f5f5;
+}
+
+.wrap {
+  padding: 2em .5em 8em;
+  width: 88%;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+blockquote {
+  margin: 1em;
+  padding: .9em .5em 1.2em 1.2em;
+  letter-spacing: 1px;
+  border-left: 4px solid #549eb5;
+  background: #1a7d9b;
+  font-style: italic;
+  text-shadow: -1px -1px 1px #006e90;
+}
+
+.block {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  margin-bottom: 1.5em;
+}
+.block small {
+  display: block;
+  margin: 0 2em;
+}
+.block small cite {
+  text-align: right;
+  font-style: normal;
+  font-weight: 900;
+  margin-right: .3em;
+  display: block;
+}
+.block small date {
+  margin-left: .5em;
+  background: #1a7d9b;
+  color: #006e90;
+  font-size: .8em;
+  padding: .2em .5em;
+}
+.block a {
+  display: inline-block;
+  color: #f5f5f5;
+  font-weight: 900;
+  text-decoration: none;
+  float: left;
+}
+.block a i {
+  margin-right: .3em;
+}
+
+/* Video Modal
+==========================*/
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 400000;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.flexy {
+  width: 90%;
+  margin: 5% auto;
+  position: relative;
+  height: 0;
+  padding-bottom: 33%;
+  min-height: 9em;
+}
+.flexy iframe {
+  position: absolute;
+  width: 90vw;
+  height: 80vh;
+  top: -12px;
+  left: 0;
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.9);
+  z-index: 140000;
+}
+
+a:hover  {
+
+    opacity: 0.9;
+    color:white;
+}
+
+
+.black-bar {
+        width: 100vw;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    z-index: 1500;
+    margin-top: -100px;
+    padding: 3em;
+}
+
+#top {
+        position: fixed;
+    /* top: -35px; */
+    left: 0;
+    top: 0px;
+    min-width: 100%;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+
+}
+
+
+
+a#one_pic:hover::before {
+    color: white;
+    top: 25%;
+    left: 35%;
+    position: absolute;
+    white-space: pre; /* or pre-wrap */
+}
+
+
+
+a#pic2:hover::before {
+    color: white;
+    top: 25%;
+    left: 10%;
+    position: absolute;
+    white-space: pre; /* or pre-wrap */
+}
+
+
+a#pic3:hover::before {
+    color: white;
+    top: 25%;
+    left: 35%;
+    position: absolute;
+    white-space: pre; /* or pre-wrap */
+}
+
+
+a#pic4:hover::before {
+   color: white;
+    top: 25%;
+    left: 35%;
+    position: absolute;
+    white-space: pre; /* or pre-wrap */
+}
+
+
+a#pic5:hover::before {
+    color: white;
+    top: 25%;
+    left: 35%;
+    position: absolute;
+    white-space: pre; /* or pre-wrap */
+}
+
+
+a#pic6:hover::before {
+    color: white;
+    top: 25%;
+    left: 10%;
+    position: absolute;
+    white-space: pre; /* or pre-wrap */
+}
+
+.title-element {
+        position: absolute;
+    /* left: 25%; */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 30%;
+    color:white;
+    opacity: 0;
+    font-family: "LYD";
+     -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  padding:0px 12px;
+
+}
+a:hover .title-element {
+
+    opacity: 1;
+    color:white;
+}
+
+
+.col-3 {
+    width: 29%;
+    display:inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+
+.col-3:nth-child(1)  {
+    padding-top: 60px;
+}
+
+.col-3:nth-child(2) {
+    width: 40%;
+    display:inline-block;
+    text-align: center;
+}
+
+.col-3 img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+.col-3:nth-child(1) .top-img {
+    max-width: 200px;
+    z-index: 2;
+    position: relative;
+}
+
+.col-3:nth-child(1) .bottom-image {
+   float:right;
+   width: 250px;
+   margin-top: -30px;
+   z-index: 2;
+   padding-right: 30px;
+   position: relative;
+}
+
+.col-3 .top {
+    position: relative;
+    z-index: 2;
+    float:right;
+    width:200px;
+    margin-right: 110px;
+}
+
+.col-3 .mid {
+     position: relative;
+      z-index: 1;
+      float:left;
+    width:200px;
+    margin-top: -60px;
+    padding-left: 0;
+
+}
+
+.mid img {
+     padding-left: 0;
+}
+.col-3 .bottom {
+     position: relative;
+      z-index: 2;
+       float:right;
+    width:250px;
+    margin-top: -60px;
+
+}
+
+.gif-gal {
+    padding:90px 15px 0;
+}
+
+.top-collection {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.top-collection .carousel-control {
+    position: absolute;
+    top: 35%;
+    height: 100vh;
+}
+.download-look {
+  text-align: center;
+}
+.download-look a{
+
+  text-align: center;
+      color: #FF4F35;
+    font-size: 2.0rem;
+  line-height: 4.2rem;
+  text-align: center;
+  font-weight: 300;
+  margin: 2em auto;
+  height: 50px;
+  text-transform: uppercase;
+  font-family: LYD,Futura-CondensedExtraBold, Futura, "Helvetica Neue", Helvetica, sans-serif;
+  font-stretch: condensed;
+}
+
+@media screen and (max-width: 920px) {
+  .col-3 {
+      width: 100%;
+      display:inline-block;
+      text-align: center;
+      vertical-align: top;
+  }
+
+
+  .col-3:nth-child(1)  {
+      padding-top: 60px;
+  }
+
+  .col-3:nth-child(2) {
+    float:none;
+  width:100%;
+      display:inline-block;
+      text-align: center;
+  }
+  .gif-gal {
+      padding: 0px 15px 0;
+  }
+  .col-3 img {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      padding: 0px 15px;
+  }
+  .top-collection .carousel-control {
+         position: absolute;
+    top: 16%;
+    height: 100vh;
+  }
+  .col-3:nth-child(1) .top-img {
+    float:none;
+  width:100%;
+      z-index: 2;
+      position: relative;
+      max-width: 100%;
+  }
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 0%;
+    z-index: 15;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0%;
+    text-align: center;
+    list-style: none;
+}
+  .col-3:nth-child(1) .bottom-image {
+    float:none;
+  width:100%;
+     margin-top: 0px;
+     z-index: 2;
+     padding-right: 0px;
+     position: relative;
+  }
+
+#screen1 video {
+        width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+  .col-3 .top {
+      position: relative;
+      z-index: 2;
+      float:none;
+    width:100%;
+      margin-right: 110px;
+  }
+
+  .col-3 .mid {
+       position: relative;
+        z-index: 1;
+        float:none;
+      width:100%;
+      margin-top: 0px;
+      padding-left: 0;
+
+  }
+
+  .col-3 .bottom {
+      position: relative;
+      z-index: 2;
+      float: right;
+      width: 100%;
+      margin-top: -60px;
+  }
+}
+
+#collection-vid  {
+  width: 100%;
+}
+
+
+.video iframe{
+       min-width: inherit;
+    height: 400px;
+    margin: 0 auto 60px;
+    display: block;
+    max-width: 800px;
+    width: 100%;
+}

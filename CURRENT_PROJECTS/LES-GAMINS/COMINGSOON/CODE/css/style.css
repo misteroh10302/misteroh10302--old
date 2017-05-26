@@ -1,0 +1,356 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-size: 14px;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Custom Fonts */
+@font-face {
+    font-family: Nobel-Light;
+    src: url(FONTS/nobel-extralight.otf);
+}
+
+h1,h2,h3,h4,button,footer {
+    font-family: Nobel-Light, Nobel, helvetica, sans-serif;
+}
+
+h1,h2,h3,h4,button {
+    text-transform: uppercase;
+}
+
+/* Coming Soon */
+
+#banner {
+   text-align: center;
+    color: white;
+    padding: 1rem;
+    background-color: #c7b8ac;
+    font-size: .55rem;
+    letter-spacing: .30rem;
+    font-weight: 400;
+}
+
+hr {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
+    border-style: hidden;
+    border-width: 0px;
+    height: .65rem;
+    background-color: white;
+}
+
+header {
+    height: 20vh;
+    background-color: #92aca0;
+    text-align: center;
+    padding-top:20vh;
+    color:white;
+}
+
+header h1 {
+    font-family: Nobel;
+    font-weight: 100;
+    font-size: 3rem;
+    letter-spacing: 2rem;
+}
+
+header h2 {
+    margin: 1rem auto;
+    letter-spacing: .75rem;
+}
+
+section {
+    background-color: #202945;
+    text-align: center;
+    color: white;
+    padding: 1em;
+    height: 36.2vh;
+}
+
+section p {
+    font-family: "Victoria Script", Times, serif;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+section h3 {
+    display: block;
+    margin: 1.5rem auto;
+    letter-spacing: .30rem;
+}
+
+section button {
+    border-radius: 2px;
+    padding: .75rem;
+    letter-spacing: .30rem;
+    border-color: white;
+    background-color: white;
+    border-style: hidden;
+    cursor: pointer;
+    transition: .5s;
+    -webkit-transition: .5s;
+}
+
+section button:hover {
+    color: white;
+    background-color: #c7b8ac;
+    transition: .15s;
+    -webkit-transition: .15s;
+}
+
+footer {
+    font-family: Nobel;
+    font-weight: 100;
+    background-color: #202945;
+    text-align: left;
+    color: white;
+    padding: 2rem;
+    font-size: .65rem;
+    letter-spacing: .10rem;
+}
+
+footer ul {
+    margin-left: 1rem;
+}
+
+footer ul,p {
+    display: inline-block;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+
+footer a {
+    color:white;
+    text-decoration: none;
+}
+
+/* Sign Up Pop Up Styles */
+
+#signup {
+    padding: 0em;
+    background-color: #c7b8ac;
+    height: 100vh;
+}
+#overlay {
+    display: none;
+    position: absolute;
+    top:0;
+    width: 100vw;
+}
+
+#banner-signup h4 {
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    background-color: #92aca0;
+    font-size: .55rem;
+    letter-spacing: .30rem;
+    font-weight: 400;
+}
+
+#close {
+    color: #202945;
+    float:right;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+.newsletter {
+    height: 90vh;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100vw;
+}
+
+.sub, .sub-sub {
+   color: #202945;
+   font-family: Nobel;
+   font-weight: 100;
+}
+
+.sub-sub {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .30rem;
+    font-size: .70rem;
+}
+
+/*email form*/
+
+#email-submission {
+    max-width: 350px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.two_col {
+       width: 49.5%;
+    display: inline-block;
+    text-align: left;
+}
+
+.two_col {
+    color: #202945;
+}
+
+.two_col input{
+    display: block;
+     width: 100%;
+    margin-bottom: 12px;
+}
+
+#email-submission #email{
+     display: block;
+     width: 100%;
+}
+
+#email-submission h5 {
+    text-align: left;
+    margin: 12px 0px;
+    color: #202945;
+}
+.formTitle {
+    text-transform: uppercase;
+    font-family: Nobel;
+    letter-spacing: .25rem;
+    font-size: .65rem;
+}
+input[type="submit" i] {
+    color:white;
+    border-radius: 2px;
+    padding: .75rem 2rem;
+    letter-spacing: .30rem;
+    border-color: #202945;
+     background-color: #202945;
+    border-style: hidden;
+    cursor: pointer;
+    transition: .5s;
+    -webkit-transition: .5s;
+    margin: 1.5rem auto;
+    text-transform: uppercase;
+
+}
+
+#email-submission button {
+    color:white;
+    border-radius: 2px;
+    padding: .75rem 2rem;
+    letter-spacing: .30rem;
+    border-color: #202945;
+     background-color: #202945;
+    border-style: hidden;
+    cursor: pointer;
+    transition: .5s;
+    -webkit-transition: .5s;
+    margin: 1.5rem auto;
+    text-transform: uppercase;
+
+}
+
+#email-submission button:hover {
+    color: #202945;
+    border-color: white;
+     background-color: white;
+}
+
+.two_col input {
+    display: block;
+    width: 80%;
+    margin-bottom: 12px;
+    /* margin-right: 12px; */
+    font-size: 14px;
+    padding: .5em;
+    border-style: none;
+}
+
+.email-input input {
+    display: block;
+    margin-bottom: 12px;
+    /* margin-right: 12px; */
+    font-size: 14px;
+    padding: .5em;
+    border-style: none;
+}
+
+.thank-you-h4 {
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.thank-you-h5 {
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: #202945;
+}
+/* Mobile Styles */
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 1rem;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+

@@ -1,0 +1,56 @@
+<div id="email-capture" style="display:none">
+		<div class="email-capture-grid" >
+			<button id="email-close" onclick="closeMe()">x</button>
+			<div id="pop-up-logo">
+				<img src="https://cdn.shopify.com/s/files/1/1381/5403/files/LesGamins_Primary_Logo-01.svg?4093587489902675970" alt="Email"   onerror="this.style.display = &quot;none&quot;">
+						  	</div>
+			<h1>
+		  		<img src="{{ 'emailimageone.png' | asset_url }}" alt="Email"  id="email-main-image" onerror="this.style.display = &quot;none&quot;">
+					<img src="{{ 'thankyou.png' | asset_url }}" alt="Email" style="display:none !important;" id="email-thank-image" onerror="this.style.display = &quot;none&quot;">
+		  	</h1>
+			 <div class="lowertext">
+			 	<div class="">
+			 				<h2>{{settings.emailheadline}}</h2>
+			 				<h3>{{settings.email_firstline}}</h3>
+			 				<h3>{{settings.email_secondline}}</h3>
+			 				<h4>{{settings.email_savings}}</h4>
+			 	</div>
+					<div id="email_warn"> Looks like you are already signed up!</div>
+						<form class="myemail-form" action="https://les-gamins.us15.list-manage.com/subscribe/post-json?u=28d274f7e98f4e8b54ec43780&amp;id=aa1abf2236&c=?" method="POST">
+					  <input class="input" type="text" value="" name="EMAIL" placeholder="EMAIL" required>
+					  <input type="submit" value="JOIN" name="submit" id="mc-embedded-subscribe2">
+					</form>
+				<h2>xo</h2>
+			 </div>
+</div>
+</div>
+<script>
+const theEmailWarn = $('#email_warn');
+const theWorkMsg = "Thank you for signing up!";
+var thankYouImage = $('#email-thank-image').attr('src');
+$('.myemail-form').submit(function(e) {
+  var $this = $(this);
+  $.ajax({
+      type: "GET", // GET & url for json slightly different
+      url: "https://les-gamins.us15.list-manage.com/subscribe/post-json?u=28d274f7e98f4e8b54ec43780&amp;id=aa1abf2236&c=?",
+      data: $this.serialize(),
+      dataType    : 'json',
+      contentType: "application/json; charset=utf-8",
+      error       : function(err) { alert("Could not connect to the registration server."); },
+      success     : function(data) {
+          if (data.result != "success") {
+							$(theEmailWarn).html(data.msg).show();
+							console.log(data);
+              // Something went wrong, parse data.msg string and display message
+          } else {
+							$(theEmailWarn).html(theWorkMsg).hide();
+							$('#email-main-image').attr('src',thankYouImage);
+							$('.lowertext').html('<h2>Thank you for signing up!</h2>');
+							console.log('worked');
+              // It worked, so hide form and display thank-you message.
+          }
+      }
+  });
+  return false;
+});
+</script>
