@@ -601,189 +601,126 @@ article { display: block; }
 </style>
 
 <div class="artists_main">
-
 <!-- 	<div class="header-text">
 		<h2>Terrible</h2>
 
 			<img src="http://terriblerecords.com/wp-content/uploads/2016/09/Screen-Shot-2016-08-31-at-9.37.15-PM.png" alt="globe">
 		<h2>Shows</h2>
 	</div> -->
-
-	<div class="theshows">
+	 <div class="theshows">
 		<div class="upcomingevents general_box">
 			<h2>Upcoming Shows</h2>
 		</div>
-
     <div class="acrylics general_box">
       <a name="acrylics"></a>
       <h2>Acrylics</h2>
-
     </div>
-
-
     <div class="events3 general_box">
       <a name="blood"></a>
       <h2>Blood Orange</h2>
-
     </div>
-
-
      <div class="cant general_box">
         <a name="cant"></a>
         <h2>Cant</h2>
-
      </div>
-
     <div class="chair general_box">
         <a name="chairlift"></a>
         <h2>Chairlift</h2>
-
      </div>
-
      <div class="classactress general_box">
         <a name="classactress"></a>
         <h2>Class Actress</h2>
-
      </div>
-
       <div class="diamond general_box">
         <a name="diamondterrifier"></a>
         <h2>Diamond Terrifier</h2>
-
      </div>
-
      <div class="dreller general_box">
         <a name="dreller"></a>
         <h2>Dreller</h2>
-
      </div>
-
-   <div class="drool general_box">
+     <div class="drool general_box">
         <a name="drool"></a>
         <h2>Drool</h2>
-
      </div>
-
     <div class="empressof general_box">
       <a name="empressof"></a>
       <h2>Empress Of</h2>
-
     </div>
-
     <div class="ginla general_box">
       <a name="ginla"></a>
       <h2>Ginla</h2>
-
     </div>
-
      <div class="horrid general_box">
         <a name="horridred"></a>
         <h2>Horrid Red</h2>
-
      </div>
-
       <div class="kindness general_box">
         <a name="kindness"></a>
         <h2>Kindess</h2>
-
      </div>
-
      <div class="kirin general_box">
         <a name="kirin"></a>
         <h2>Kirin J Callian</h2>
-
      </div>
-
-
      <div class="le1f general_box">
         <a name="le1f"></a>
         <h2>Le1f</h2>
-
      </div>
-
      <div class="miya general_box">
         <a name="miya"></a>
         <h2>Miya Folick</h2>
      </div>
-
      <div class="mizank general_box">
         <a name="mizank"></a>
         <h2>Mizan K</h2>
      </div>
-
      <div class="mosessumney general_box">
         <a name="mosessumney"></a>
         <h2>Moses Sumney</h2>
      </div>
-
     <div class="events general_box">
-    <a name="porches"></a>
+      <a name="porches"></a>
       <h2>Porches</h2>
-
-
     </div>
-
     <div class="public general_box">
-    <a name="publicaccesstv"></a>
+      <a name="publicaccesstv"></a>
       <h2>Public Access T.V.</h2>
-
-
     </div>
-
     <div class="ramona general_box">
       <a name="ramonalisa"></a>
       <h2>Ramona Lisa</h2>
-
-
     </div>
-
     <div class="regaldegal general_box">
       <a name="regaldegal"></a>
       <h2>Regal Degal</h2>
-
-
     </div>
-
     <div class="sickfeeling general_box">
       <a name="sickfeeling"></a>
       <h2>Sick Feeling</h2>
-
-
     </div>
-
-
-
     <div class="solange general_box">
       <a name="solange"></a>
       <h2>Solange</h2>
-
-
-
-
     </div>
-
      <div class="springking general_box">
       <a name="springking"></a>
       <h2>Spring King</h2>
-
-
     </div>
-
+    <div class="toulouse general_box">
+     <a name="toulouse"></a>
+     <h2>Toulouse</h2>
+    </div>
      <div class="twinshadow general_box">
       <a name="twinshadow"></a>
       <h2>Twin Shadow</h2>
-
-
     </div>
-
 		<!-- Trigger/Open The Modal -->
-<button id="myBtn" class="cog">
-  <img class="smallimg" class="little_cog" src="http://clone.terriblerecords.com/wp-content/uploads/2016/09/selectartist.png" alt="">
-</button>
+    <button id="myBtn" class="cog">
+      <img class="smallimg" class="little_cog" src="http://clone.terriblerecords.com/wp-content/uploads/2016/09/selectartist.png" alt="">
+    </button>
 	</div>
 </div> <!-- end artists main container-->
-
-
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -824,6 +761,7 @@ article { display: block; }
           <li><a href="#sickfeeling" onclick="return runMyFunction();">Sick Feeling</a></li>
           <li><a href="#solange" onclick="return runMyFunction();">Solange</a></li>
           <li><a href="#springking" onclick="return runMyFunction();">Spring king</a></li>
+          <li><a href="#toulouse" onclick="return runMyFunction();">Toulouse</a></li>
           <li><a href="#twinshadow" onclick="return runMyFunction();">Twin Shadow</a></li>
         </div>
        </ul>
@@ -1585,6 +1523,31 @@ $.getJSON(url_solange, function(data) {
   }
 });
 
+//Tourlouse
+var url_toulouse = 'https://api.songkick.com/api/3.0/artists/2921991/calendar.json?apikey=GEqP0nAjI0ItrhoH&jsoncallback=?';
+$.getJSON(url_toulouse, function(data) {
+  if (data.resultsPage.totalEntries == 0 ) {
+        $('.toulouse').append("<article class='nothing'><h3>Just can't wait to get on the road again.</h3></article>");
+        return false;
+  } else {
+    var events = data.resultsPage.results.event;
+    events.forEach(function(item, index, array) {
+    var event = array[index].displayName;
+    var event_performer = array[index].performance[0].artist.displayName;;
+    var venue = array[index].venue.displayName;
+    var link = array[index].uri;
+    var date = array[index].start.date;
+    var d = new Date(date);
+    var current = new Date(d.getFullYear(), d.getMonth(), d.getDate()+1, 1);
+    var year = current.getFullYear();
+    var day = current.getDate();
+    var month = current.getMonth()+1;
+    var thedate = month + '/' + day + '/' + year;
+    var theLocation = array[index].location.city;
+    $('.toulouse').append('<article><a target="_blank" href='+ link+'><div class="col date">'+ thedate +'</div><div class="col venue">'+ venue + '</div><span class="col location" id="theLoc">' +theLocation +'</span> <div class="col tickets">Buy Tickets</div</a> </article>');  });
+  }
+});
+
 //Twin Shadow
 var url_twin = 'https://api.songkick.com/api/3.0/artists/2921991/calendar.json?apikey=GEqP0nAjI0ItrhoH&jsoncallback=?';
 $.getJSON(url_twin, function(data) {
@@ -1612,7 +1575,6 @@ $.getJSON(url_twin, function(data) {
 
 
 var url_spring = 'https://api.songkick.com/api/3.0/artists/6157999/calendar.json?apikey=GEqP0nAjI0ItrhoH&jsoncallback=?';
-
 $.getJSON(url_spring, function(data) {
   if (data.resultsPage.totalEntries == 0 ) {
         $('.springking').append("<article class='nothing'><h3>Just can't wait to get on the road again.</h3></article>");

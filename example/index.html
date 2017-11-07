@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example</title>
+	    <script type="text/javascript" src="dist/paper-full.js"></script>
+</head>
+<style>
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+	section {
+		background-color: black;
+		padding: 1em;
+	}
+
+	section div {
+		height: 100px;
+		width: 100px;
+		padding: 1em;
+		float:left;
+		background-color: pink;
+	}
+
+	.clearfix:after {
+	  visibility: hidden;
+	  display: block;
+	  font-size: 0;
+	  content: " ";
+	  clear: both;
+	  height: 0;
+	}
+</style>
+<body>
+	<h1>this is a <span>span</span> element</h1>
+	<h1>this is an <p>inline block element</p> </h1>
+
+	<section class="clearfix">
+		<div>Col</div>
+		<div>Col</div>
+	</section>
+</body>
+</html>
