@@ -1,0 +1,344 @@
+* {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  margin:0;
+  padding:0;
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+  font-family: Swiss_Reg;
+  src: url(../fonts/swiss_reg.ttf);
+}
+@font-face {
+  font-family: Swiss_it;
+  src: url(../fonts/swiss_it.ttf);
+}
+@font-face {
+  font-family: Aldo;
+  src: url(../fonts/Aldo-Manuzio.otf);
+}
+
+body {
+  background-color: black;
+  font-family: 'Swiss_Reg', sans-serif;
+  letter-spacing: 1px;
+      font-size: 8.5pt;
+}
+
+header {
+  height: 100vh;
+  background-image: url(../images/bcg.png);
+  background-size: cover;
+  position: relative;
+  z-index: 11;
+}
+main {
+  padding-top: 60px;
+  z-index: 10;
+position: relative;
+margin-bottom: 400px;
+background-color: black;
+}
+.logo {
+  position: absolute;
+  bottom:20vh;
+  left: 0;
+  right:0;
+  margin: 0 auto;
+  text-align: center;
+  mix-blend-mode: difference;
+  transition: 5s linear;
+  transform-origin: 50px;
+  animation: imageFade 3s linear;
+}
+
+@keyframes imageFade {
+  0%{
+      mix-blend-mode: exclusion;
+  }
+  100% {
+    mix-blend-mode: difference;
+  }
+}
+#px-render{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+}
+canvas{
+  width: 100%;
+  height: 100%;
+}
+.logo img {
+  width: 50vw;
+  margin: 0 auto;
+      filter: grayscale(200%);
+}
+
+nav {
+  height: 100vh;
+}
+
+nav li a {
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+nav .bottom {
+  display: inline-block;
+  transform: rotate(270deg) translateX(-50%);
+  transform-origin: 0 0;
+  padding-top: 30px;
+  width: auto;
+  position: fixed;
+  bottom: 90px;
+    z-index: 11;
+}
+
+nav .top {
+  display: inline-block;
+  transform: rotate(270deg) translateX(-50%);
+  transform-origin: 0 0;
+  padding-top: 30px;
+  width: auto;
+  position: fixed;
+  top: 170px;
+  z-index: 11;
+}
+
+
+
+.bottom li, .top li {
+  display: inline-block;
+  padding-right: 15px;
+}
+section {
+  text-align: center;
+  padding: 90px 90px;
+  padding-left: 80px;
+  padding-right: 60px;
+}
+section h2 {
+  color:white;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+.touring {
+  color:white;
+}
+
+.touring div {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 60px 0;
+
+}
+.touring div > *{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 10%;
+}
+
+.touring div > h3{
+  width:80%;
+}
+.merch img {
+
+}
+.merch .grid div {
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+.touring h3 {
+  font-size: 4em;
+  margin: 0px;
+  font-family: 'Aldo', serif;
+}
+.touring h4 {
+  font-size: .8rem;
+    margin: 0 0px 0 15px;
+      font-family: "Swiss_Reg", sans-serif;
+      text-align: left;
+}
+.touring h6 {
+  font-size: .8rem;
+    margin: 0px;
+      font-family: "Swiss_it", sans-serif;
+      text-align: right;
+}
+.tracks a {
+  display: block;
+  font-family: 'Aldo', serif;
+  font-size: 8em;
+  margin: 30px 0;
+  text-transform: uppercase;
+  transition: .05s linear;
+}
+nav a:hover {
+  color: #E1D248;
+}
+.tracks a:hover {
+  color: #E1D248;
+  /* text-shadow: 0px 1px 20px #E1D248; */
+  filter: drop-shadow(1px 5px 25px #E1D248);
+}
+ .design img {
+  width: 30px;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.grid div {
+  width: 48%;
+  height: 500px;
+  margin-bottom: 60px;
+  background-size: cover;
+  background-position: center;
+}
+
+.grid img {
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 90px;
+  background-color: black;
+  position: relative;
+  z-index: 10;
+}
+
+.newsletter {
+  text-align: left;
+  color:white;
+  position: relative;
+}
+
+button {
+  border:0;
+  border-radius: 0;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color:white;
+  transition: .25s linear;
+
+}
+
+input:focus {
+  outline: 0;
+}
+button i.fas {
+  font-size: 1.5em;
+  display: inline-block;
+}
+button:hover   {
+  margin-left: 5px;
+  right: -5px;
+}
+.newsletter h3 {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+footer .logo-foot img {
+  width: 30px;
+}
+footer > div {
+  width: 30%;
+  text-align: center;
+}
+.socials {
+  margin-bottom: 30px;
+}
+.socials .fab {
+  font-size: 1.5rem;
+    color: white;
+    margin: 0 .55rem;
+}
+.socialsFoot {
+  text-align: right;
+}
+.socialsFoot .fab {
+  font-size: 1.25em;
+  color:white;
+  margin: 0 .25em;
+  display: inline-block;
+}
+a {
+  color:white;
+  text-decoration: none;
+}
+
+input[type=email] {
+    font-family: GT-America-Light,sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    text-align: left;
+    color: #727272;
+    padding: 5px 0;
+    padding-right: 35px;
+    border: none;
+    width: 100%;
+    background: transparent;
+}
+.your-email-news {
+    display: block;
+    position: relative;
+    border-bottom: 2px solid #908d81;
+    will-change: border-color;
+    transition: border-color .3s ease-in-out;
+}
+
+.logo.smaller img{
+  width: 100px;
+  top:0;
+filter: grayscale(0%);
+
+}
+.logo.smaller {
+  top:30px;
+  position: fixed;
+    mix-blend-mode: overlay;
+      height: 0;
+      transition: 0s !important;
+      transform:none !important;
+
+}
+
+.socialBcg {
+  height: 80vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  bottom:0;
+  background-image: url(../images/WENS_pink.png);
+  background-size: cover;
+  background-position: center;
+      background-position: 59% 35%;
+}
+footer button {
+  position: absolute;
+    right: 0;
+    top: 10px;
+
+}
+.merch div > div:hover img {
+  transition: .25s linear;
+    transform: scale(1);
+}
+.merch div > div:hover img {
+  transform: scale(1.1);
+}
