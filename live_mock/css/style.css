@@ -163,7 +163,7 @@ section h2 {
 
 }
 .merch .grid div {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   overflow: hidden;
 }
 .touring h3 {
@@ -356,14 +356,25 @@ footer button {
 
 }
 
+.merch .grid {
+  justify-content: space-between;
+
+}
+
 .merch div > div img {
   position: relative;
   top: -0%;
 }
-.merch div > div {
-  width: 50%;
-  margin: 0 25%;
+.merch .grid > div {
+  width: 48%;
+  margin: 0;
   height: 600px;
+}
+.merch div > div > div{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
 }
 .merch div > div:hover img {
   transition: .25s linear;
