@@ -358,11 +358,12 @@ footer button {
 
 .merch div > div img {
   position: relative;
-  top: -25%;
+  top: -0%;
 }
 .merch div > div {
-  width: 100%;
-  height: 500px;
+  width: 50%;
+  margin: 0 25%;
+  height: 600px;
 }
 .merch div > div:hover img {
   transition: .25s linear;
