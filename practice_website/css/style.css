@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Krub:500|Noto+Serif+SC:200,300');
+
+body {
+  background-color: #ffdbd2;
+  color: #004b54;
+  padding: 40px 50px;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Noto Serif SC", sans-serif;
+  font-size: 45px;
+  line-height: 60px;
+  margin: 0;
+  max-width: 900px;
+  font-weight: 300;
+}
+
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#projects div{
+  width: 46%;
+  padding: 120px 0;
+}
+
+
+#projects .second__div{
+  margin-top:560px;
+}
+
+#projects .third__div {
+  padding-left: 60px;
+}
+
+#projects img {
+  width: 100%;
+  opacity: 0.35;
+  transition: 200ms ease;
+  box-shadow: 3px 3px 40px #004b54;
+}
+
+#projects img:hover {
+  opacity: 1;
+}
+
+#contact {
+  display: flex;
+}
+
+
+#contact h2{
+  margin-right: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
